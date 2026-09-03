@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Screeching Halt — Presentation 01</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Epilogue:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:      #F4F2EA;
+      --bg-2:    #EAE5D8;
+      --bg-3:    #DED8C8;
+      --bg-4:    #D4CDB8;
+      --bg-dark: #2E1A0E;
+
+      --text:       rgba(46,26,14,1.0);
+      --text-mid:   rgba(46,26,14,0.65);
+      --text-dim:   rgba(46,26,14,0.40);
+      --text-inv:   rgba(244,242,234,1.0);
+      --text-inv-mid: rgba(244,242,234,0.6);
+
+      --red:    #E91A41;
+      --teal:   #3A887D;
+      --brown:  #4E0002;
+
+      --rule:      rgba(46,26,14,0.10);
+      --rule-inv:  rgba(244,242,234,0.12);
+
+      --ff-display: 'Dela Gothic One', sans-serif;
+      --ff-body:    'Epilogue', sans-serif;
+
+      --max: 1200px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--ff-body); font-size: 16px; line-height: 1.7; }
+    h1, h2, h3, h4, h5, h6 { font-weight: 400; }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      height: 60px; padding: 0 40px;
+      display: flex; align-items: center;
+      background: rgba(244,242,234,0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--rule);
+    }
+    .nav-project {
+      font-family: var(--ff-body); font-size: 11px; font-weight: 600;
+      letter-spacing: .14em; text-transform: uppercase; color: var(--text);
+    }
+
+    .hero {
+      min-height: 60vh;
+      background-image: url('tire-tracks-hero.jpg');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      display: flex; align-items: flex-end;
+      padding: 64px 40px;
+      position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(15,15,15,0.15) 0%,
+        rgba(15,15,15,0.35) 45%,
+        rgba(15,15,15,0.82) 80%,
+        rgba(15,15,15,0.95) 100%
+      );
+      z-index: 0;
+    }
+    .hero-inner { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; width: 100%; }
+    .hero-label {
+      color: var(--red); font-family: var(--ff-body); font-size: 12px;
+      letter-spacing: .14em; text-transform: uppercase; font-weight: 600; margin-bottom: 24px;
+    }
+    .hero-h1 {
+      font-family: var(--ff-display); font-weight: 400;
+      font-size: clamp(40px, 7vw, 80px); color: var(--text-inv); line-height: 1.0; margin-bottom: 24px;
+    }
+    .hero-meta { color: var(--text-inv-mid); font-family: var(--ff-body); font-size: 14px; }
+
+    .arc-s { padding: 64px 0; }
+    .arc-w { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+
+    .arc-lbl {
+      font-family: var(--ff-body); font-size: 10px; font-weight: 700;
+      letter-spacing: .16em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 8px;
+    }
+    .arc-h1 {
+      font-family: var(--ff-display); font-weight: 400; font-size: clamp(32px, 5vw, 48px);
+      color: var(--text); margin-bottom: 16px;
+    }
+    .arc-body {
+      font-size: 15px; color: var(--text-mid); line-height: 1.7; max-width: 680px;
+    }
+
+    .arc-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .arc-tag { background: var(--bg-3); font-size: 11px; color: var(--text-mid); padding: 4px 12px; font-weight: 600; }
+
+    .ph-note { color: var(--red); font-style: italic; }
+    .moodboard-ph {
+      margin-top: 24px; background: #fff; border: 2px dashed var(--rule);
+      min-height: 420px; display: flex; align-items: center; justify-content: center;
+      text-align: center; padding: 40px;
+    }
+    .moodboard-ph-text { font-family: var(--ff-body); font-size: 13px; color: var(--text-dim); font-style: italic; }
+
+    .caption-banner {
+      margin-top: 16px; display: inline-block; background: #FBD0D0;
+      color: var(--brown); font-family: var(--ff-body); font-weight: 700;
+      font-size: 13px; letter-spacing: .02em; padding: 8px 18px; border-radius: 20px;
+    }
+
+    .arc-g3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 28px; }
+    @media (max-width: 700px) { .arc-g3 { grid-template-columns: 1fr; } }
+    .g3-ph {
+      background: var(--bg-3); border: 2px dashed var(--rule);
+      min-height: 160px; display: flex; align-items: center; justify-content: center;
+      text-align: center; padding: 16px;
+    }
+    .g3-ph-text { font-size: 11px; color: var(--text-dim); font-style: italic; }
+
+    .tl-label {
+      font-family: var(--ff-body); font-size: 10px; font-weight: 700;
+      letter-spacing: .16em; text-transform: uppercase; color: var(--text-dim);
+      margin-top: 40px; margin-bottom: 12px;
+    }
+    .tl-row {
+      display: flex; align-items: baseline; gap: 16px;
+      padding: 10px 0; border-bottom: 1px solid var(--rule);
+    }
+    .tl-row:last-child { border-bottom: none; }
+    .tl-num { font-size: 12px; color: var(--text-dim); min-width: 24px; }
+    .tl-text { font-size: 16px; color: var(--text); }
+
+    .step {
+      display: flex; align-items: flex-start; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--rule);
+    }
+    .step:last-child { border-bottom: none; }
+    .step-num {
+      font-family: var(--ff-display); font-weight: 400; font-size: 32px; color: var(--text-dim);
+      line-height: 1; flex-shrink: 0; min-width: 52px;
+    }
+    .step-body h3 { font-family: var(--ff-body); font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+    .step-body p { font-size: 14px; color: var(--text-mid); line-height: 1.6; }
+
+    footer { background: var(--bg-dark); padding: 48px 40px; }
+    .footer-inner {
+      max-width: var(--max); margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+    }
+    .chip {
+      background: var(--red); color: white; font-family: var(--ff-body);
+      font-size: 10px; letter-spacing: .1em; text-transform: uppercase;
+      padding: 4px 12px; font-weight: 700;
+    }
+    .footer-credit { color: var(--text-inv-mid); font-size: 12px; font-family: var(--ff-body); }
+    /* lightbox */
+    img.zoomable { cursor: zoom-in; transition: opacity .2s; }
+    img.zoomable:hover { opacity: .85; }
+    .lightbox-overlay {
+      position: fixed; inset: 0; background: rgba(20,12,7,0.92);
+      display: none; align-items: center; justify-content: center;
+      padding: 40px; z-index: 9999; cursor: zoom-out;
+    }
+    .lightbox-overlay.open { display: flex; }
+    .lightbox-overlay img { max-width: 92%; max-height: 92%; box-shadow: 0 12px 48px rgba(0,0,0,0.5); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-project">Screeching Halt / Presentation 01</span>
+</nav>
+
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div class="hero-label">Screeching Halt</div>
+    <h1 class="hero-h1">Two Concepts</h1>
+    <div class="hero-meta">Presentation 01 &nbsp;·&nbsp; <span class="ph-note">[DATE]</span></div>
+  </div>
+</section>
+
+<!-- WHAT WE'RE LOOKING AT TODAY -->
+<div class="arc-s" style="background: var(--bg);">
+  <div class="arc-w">
+    <div class="arc-lbl">Today</div>
+    <h2 class="arc-h1" style="font-size: clamp(28px, 4.5vw, 40px);">What we're looking at today</h2>
+    <p class="arc-body ph-note">Placeholder — framing for the room. This is exploratory, not final. Point people toward direction and feeling over details like exact wording or specific image choices. Gut reactions welcome; nothing here needs to be decided today.</p>
+  </div>
+</div>
+
+<!-- WHAT WE HEARD -->
+<div class="arc-s" style="background: var(--bg-2);">
+  <div class="arc-w">
+    <div class="arc-lbl">Recap</div>
+    <h2 class="arc-h1" style="font-size: clamp(28px, 4.5vw, 40px);">What we heard</h2>
+    <p class="arc-body ph-note" style="margin-bottom: 24px;">Placeholder — short recap of the kickoff conversation, pulled from notes once filled out.</p>
+
+    <div style="padding: 14px 0; border-bottom: 1px solid var(--rule);">
+      <div class="arc-lbl ph-note" style="color: var(--red);">Topic one</div>
+      <div class="arc-body ph-note">Placeholder — what was said about this topic.</div>
+    </div>
+    <div style="padding: 14px 0; border-bottom: 1px solid var(--rule);">
+      <div class="arc-lbl ph-note" style="color: var(--red);">Topic two</div>
+      <div class="arc-body ph-note">Placeholder — what was said about this topic.</div>
+    </div>
+    <div style="padding: 14px 0;">
+      <div class="arc-lbl ph-note" style="color: var(--red);">Topic three</div>
+      <div class="arc-body ph-note">Placeholder — what was said about this topic.</div>
+    </div>
+
+    <div style="border-left: 4px solid var(--teal); padding: 16px 24px; margin-top: 24px;">
+      <p class="arc-body ph-note" style="font-style: italic; margin: 0 0 8px;">"Placeholder client quote goes here."</p>
+      <div class="arc-lbl ph-note" style="margin: 0;">— Who said it</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONCEPT A -->
+<div class="arc-s" style="background: var(--bg-2);">
+  <div class="arc-w">
+    <div class="arc-lbl">Concept A — Concept One</div>
+    <h2 class="arc-h1">Concept One.</h2>
+    <p class="arc-body ph-note">Placeholder — description copy pending. Visual system: hand-lettered wordmark, film-reel snail mark, warm documentary tone, teal &amp; coral palette.</p>
+
+    <div class="moodboard-ph" style="padding: 0; overflow: hidden; margin-top: 32px;">
+      <img src="establishing_shot.png" class="zoomable" alt="Screeching Halt Presents — hands at a wood lathe" style="width: 100%; height: 100%; object-fit: cover;" />
+    </div>
+    <div style="text-align: center;">
+      <span class="caption-banner">warm, hands-on, documentary</span>
+    </div>
+
+    <div class="arc-g3" style="grid-template-columns: 1fr 1fr; margin-top: 40px;">
+      <div>
+        <div class="arc-lbl" style="margin-bottom: 8px;">The mark</div>
+        <div style="background: #fff; padding: 12px;"><img src="PrimaryLogo.png" class="zoomable" alt="Screeching Halt Productions primary logo" /></div>
+      </div>
+      <div>
+        <div class="arc-lbl" style="margin-bottom: 8px;">The system</div>
+        <div style="background: #fff; padding: 12px;"><img src="LogoFamily.png" class="zoomable" alt="Screeching Halt logo family — color and lockup variations" /></div>
+      </div>
+    </div>
+
+    <!-- APPLICATIONS -->
+    <div class="arc-g3" style="grid-template-columns: 1fr 1fr 1fr; margin-top: 40px;">
+      <div>
+        <div class="arc-lbl" style="margin-bottom: 8px;">In the world</div>
+        <img src="vanity_card.png" class="zoomable" alt="A Screeching Halt Production vanity card" />
+      </div>
+      <div>
+        <div class="arc-lbl" style="margin-bottom: 8px;">Watermark</div>
+        <img src="Watermark.png" class="zoomable" alt="Screeching Halt watermark on a documentary shot" />
+      </div>
+      <div>
+        <div class="arc-lbl" style="margin-bottom: 8px;">End credits</div>
+        <img src="end_credits.png" class="zoomable" alt="Screeching Halt end credits screen" />
+      </div>
+    </div>
+
+    <!-- COLOR & TYPE -->
+    <div class="arc-lbl" style="margin-top: 40px;">Color &amp; type</div>
+    <div style="margin-top: 12px; background: #fff; padding: 12px;">
+      <img src="ColorandType.png" class="zoomable" alt="Screeching Halt color palette and typography reference" />
+    </div>
+
+    <div class="arc-tags" style="margin-top: 40px;">
+      <span class="arc-tag">Hand-lettered wordmark</span>
+      <span class="arc-tag">Snail + film reel mark</span>
+      <span class="arc-tag">Teal &amp; coral palette</span>
+      <span class="arc-tag">Documentary tone</span>
+      <span class="arc-tag">Craftsman detail</span>
+      <span class="arc-tag">Playful pun</span>
+    </div>
+
+    <div class="tl-label">Tagline directions</div>
+    <div>
+      <div class="tl-row"><span class="tl-num">01</span><span class="tl-text ph-note">Tagline one.</span></div>
+      <div class="tl-row"><span class="tl-num">02</span><span class="tl-text ph-note">Tagline two.</span></div>
+      <div class="tl-row"><span class="tl-num">03</span><span class="tl-text ph-note">Tagline three.</span></div>
+      <div class="tl-row"><span class="tl-num">04</span><span class="tl-text ph-note">Tagline four.</span></div>
+      <div class="tl-row"><span class="tl-num">05</span><span class="tl-text ph-note">Tagline five.</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- CONCEPT B -->
+<div class="arc-s" style="background: var(--bg);">
+  <div class="arc-w">
+    <div class="arc-lbl">Concept B — <span class="ph-note">Concept Two</span></div>
+    <h2 class="arc-h1"><span class="ph-note">Concept Two.</span></h2>
+    <p class="arc-body ph-note">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam quis nostrud.</p>
+
+    <div class="arc-tags">
+      <span class="arc-tag ph-note">Tag one</span>
+      <span class="arc-tag ph-note">Tag two</span>
+      <span class="arc-tag ph-note">Tag three</span>
+      <span class="arc-tag ph-note">Tag four</span>
+      <span class="arc-tag ph-note">Tag five</span>
+      <span class="arc-tag ph-note">Tag six</span>
+    </div>
+
+    <div class="moodboard-ph">
+      <div class="moodboard-ph-text">[MOODBOARD IMAGE PLACEHOLDER — CONCEPT TWO]</div>
+    </div>
+    <div style="text-align: center;">
+      <span class="caption-banner">tone, feeling, vibe placeholder</span>
+    </div>
+
+    <div class="arc-g3">
+      <div>
+        <div class="arc-lbl" style="margin-bottom: 8px;">In the world</div>
+        <div class="g3-ph"><span class="g3-ph-text">[IMAGE PLACEHOLDER]</span></div>
+      </div>
+      <div>
+        <div class="arc-lbl" style="margin-bottom: 8px;">The mark</div>
+        <div class="g3-ph"><span class="g3-ph-text">[IMAGE PLACEHOLDER]</span></div>
+      </div>
+      <div>
+        <div class="arc-lbl" style="margin-bottom: 8px;">The system</div>
+        <div class="g3-ph"><span class="g3-ph-text">[IMAGE PLACEHOLDER]</span></div>
+      </div>
+    </div>
+
+    <div class="tl-label">Tagline directions</div>
+    <div>
+      <div class="tl-row"><span class="tl-num">01</span><span class="tl-text ph-note">Tagline one.</span></div>
+      <div class="tl-row"><span class="tl-num">02</span><span class="tl-text ph-note">Tagline two.</span></div>
+      <div class="tl-row"><span class="tl-num">03</span><span class="tl-text ph-note">Tagline three.</span></div>
+      <div class="tl-row"><span class="tl-num">04</span><span class="tl-text ph-note">Tagline four.</span></div>
+      <div class="tl-row"><span class="tl-num">05</span><span class="tl-text ph-note">Tagline five.</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- NEXT STEPS -->
+<div class="arc-s" style="background: var(--bg-2);">
+  <div class="arc-w">
+    <div class="arc-lbl">Next steps from Presentation 01</div>
+    <div style="margin-top: 12px;">
+      <div class="step"><div class="step-num">01</div><div class="step-body"><h3 class="ph-note">Step one title</h3><p class="ph-note">Placeholder description of step one.</p></div></div>
+      <div class="step"><div class="step-num">02</div><div class="step-body"><h3 class="ph-note">Step two title</h3><p class="ph-note">Placeholder description of step two.</p></div></div>
+      <div class="step"><div class="step-num">03</div><div class="step-body"><h3 class="ph-note">Step three title</h3><p class="ph-note">Placeholder description of step three.</p></div></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <span class="chip">Confidential</span>
+    <span class="footer-credit">Big Sis Creative Studio × Screeching Halt · 2026</span>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" alt="" />
+</div>
+<script>
+  function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').classList.add('open');
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+  }
+  document.querySelectorAll('img.zoomable').forEach(function(img) {
+    img.addEventListener('click', function() { openLightbox(img.src); });
+  });
+</script>
+
+</body>
+</html>
