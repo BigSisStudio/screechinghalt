@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Screeching Halt — Presentation 01</title>
+  <title>Screeching Halt / Presentation 01</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Epilogue:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet">
@@ -44,15 +44,25 @@
     nav {
       position: sticky; top: 0; z-index: 100;
       height: 60px; padding: 0 40px;
-      display: flex; align-items: center;
+      display: flex; align-items: center; justify-content: space-between;
       background: rgba(244,242,234,0.94);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--rule);
+      overflow-x: auto;
     }
     .nav-project {
       font-family: var(--ff-body); font-size: 11px; font-weight: 600;
       letter-spacing: .14em; text-transform: uppercase; color: var(--text);
+      white-space: nowrap; flex-shrink: 0; padding-right: 24px;
     }
+    .nav-links { display: flex; align-items: center; gap: 4px; flex-shrink: 0; }
+    .nav-links a {
+      font-family: var(--ff-body); font-size: 10px; font-weight: 600;
+      letter-spacing: .12em; text-transform: uppercase; color: var(--text-dim);
+      padding: 0 14px; height: 60px; display: flex; align-items: center;
+      white-space: nowrap; text-decoration: none; transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--red); }
 
     .hero {
       min-height: 60vh;
@@ -104,6 +114,13 @@
 
     .arc-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
     .arc-tag { background: var(--bg-3); font-size: 11px; color: var(--text-mid); padding: 4px 12px; font-weight: 600; }
+
+    .arc-g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 12px; }
+    @media (max-width: 700px) { .arc-g2 { grid-template-columns: 1fr; } }
+    .arc-card-head { font-family: var(--ff-body); font-weight: 700; font-size: 16px; color: var(--text); margin-bottom: 14px; }
+    .arc-card ul { list-style: none; padding: 0; margin: 0; }
+    .arc-card li { font-size: 14px; color: var(--text-mid); padding: 5px 0; line-height: 1.6; padding-left: 20px; position: relative; }
+    .arc-card li::before { content: '→'; position: absolute; left: 0; color: var(--red); font-weight: 700; }
 
     .ph-note { color: var(--red); font-style: italic; }
     .moodboard-ph {
@@ -179,61 +196,78 @@
 
 <nav>
   <span class="nav-project">Screeching Halt / Presentation 01</span>
+  <div class="nav-links">
+    <a href="#today">Today</a>
+    <a href="#recap">Recap</a>
+    <a href="#concept-one">Concept One</a>
+    <a href="#concept-two">Concept Two</a>
+    <a href="#next-steps">Next Steps</a>
+  </div>
 </nav>
 
 <section class="hero" id="top">
   <div class="hero-inner">
-    <div class="hero-label">Screeching Halt</div>
-    <h1 class="hero-h1">Two Concepts</h1>
-    <div class="hero-meta">Presentation 01 &nbsp;·&nbsp; <span class="ph-note">[DATE]</span></div>
+    <h1 class="hero-h1">Screeching Halt</h1>
+    <div class="hero-label" style="font-size: 16px; margin-top: -8px; color: var(--text-inv-mid);">Initial Concept Review</div>
+    <div class="hero-meta">Presentation 01 &nbsp;&middot;&nbsp; September 4, 2026</div>
   </div>
 </section>
 
-<!-- WHAT WE'RE LOOKING AT TODAY -->
-<div class="arc-s" style="background: var(--bg);">
+<!-- SETTING THE STAGE -->
+<div class="arc-s" id="today" style="background: var(--bg);">
   <div class="arc-w">
     <div class="arc-lbl">Today</div>
-    <h2 class="arc-h1" style="font-size: clamp(28px, 4.5vw, 40px);">What we're looking at today</h2>
-    <p class="arc-body ph-note">Placeholder — framing for the room. This is exploratory, not final. Point people toward direction and feeling over details like exact wording or specific image choices. Gut reactions welcome; nothing here needs to be decided today.</p>
+    <h2 class="arc-h1" style="font-size: clamp(28px, 4.5vw, 40px);">Setting the stage</h2>
+
+    <div style="display: grid; grid-template-columns: 1fr 1px 1.3fr; gap: 32px; margin-top: 12px; align-items: start;">
+      <div class="arc-card">
+        <div class="arc-card-head" style="font-size: 20px;">Today's discussion</div>
+        <ul>
+          <li>Early creative directions, straight off the homework review.</li>
+          <li>A chance for gut reactions. What's landing and what isn't?</li>
+          <li>A discussion of logo, color, language, and tone. Not a vote.</li>
+        </ul>
+      </div>
+      <div style="width: 1px; align-self: stretch; background: var(--brown); opacity: 0.35;"></div>
+      <div class="arc-card" style="padding-left: 24px;">
+        <div class="arc-card-head" style="font-size: 20px; color: var(--text-dim);">Down the road</div>
+        <ul>
+          <li>Print-ready, final logos and locked-in taglines.</li>
+          <li>A finished brand system.</li>
+          <li>Additional assets that are part of the Elevated Package.</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>
 
 <!-- WHAT WE HEARD -->
-<div class="arc-s" style="background: var(--bg-2);">
+<div class="arc-s" id="recap" style="background: var(--bg-2);">
   <div class="arc-w">
     <div class="arc-lbl">Recap</div>
     <h2 class="arc-h1" style="font-size: clamp(28px, 4.5vw, 40px);">What we heard</h2>
-    <p class="arc-body ph-note" style="margin-bottom: 24px;">Placeholder — short recap of the kickoff conversation, pulled from notes once filled out.</p>
+    <p class="arc-body" style="margin-bottom: 24px;">We had a great conversation last week working through the homework, and it informed our exploration. Thanks! Here's what stuck with us:</p>
 
-    <div style="padding: 14px 0; border-bottom: 1px solid var(--rule);">
-      <div class="arc-lbl ph-note" style="color: var(--red);">Topic one</div>
-      <div class="arc-body ph-note">Placeholder — what was said about this topic.</div>
-    </div>
-    <div style="padding: 14px 0; border-bottom: 1px solid var(--rule);">
-      <div class="arc-lbl ph-note" style="color: var(--red);">Topic two</div>
-      <div class="arc-body ph-note">Placeholder — what was said about this topic.</div>
-    </div>
-    <div style="padding: 14px 0;">
-      <div class="arc-lbl ph-note" style="color: var(--red);">Topic three</div>
-      <div class="arc-body ph-note">Placeholder — what was said about this topic.</div>
-    </div>
-
-    <div style="border-left: 4px solid var(--teal); padding: 16px 24px; margin-top: 24px;">
-      <p class="arc-body ph-note" style="font-style: italic; margin: 0 0 8px;">"Placeholder client quote goes here."</p>
-      <div class="arc-lbl ph-note" style="margin: 0;">— Who said it</div>
+    <div class="arc-g3" style="margin-top: 8px;">
+      <div style="display: flex; gap: 10px; align-items: flex-start;"><span style="color: var(--red); font-weight: 700; flex-shrink: 0;">→</span><span style="font-size: 14px; color: var(--text-mid); line-height: 1.6;">The snail nods to an early "Slow Series" idea, a symbol of stillness and presence, not slowness.</span></div>
+      <div style="display: flex; gap: 10px; align-items: flex-start;"><span style="color: var(--red); font-weight: 700; flex-shrink: 0;">→</span><span style="font-size: 14px; color: var(--text-mid); line-height: 1.6;">Confidence, not performance. Obama, Seth Rogen, and Amy Poehler all share comfort in their own skin. Nothing forced.</span></div>
+      <div style="display: flex; gap: 10px; align-items: flex-start;"><span style="color: var(--red); font-weight: 700; flex-shrink: 0;">→</span><span style="font-size: 14px; color: var(--text-mid); line-height: 1.6;">Boldness through the work, not the claim. It shouldn't read as bragging, it's confidence.</span></div>
+      <div style="display: flex; gap: 10px; align-items: flex-start;"><span style="color: var(--red); font-weight: 700; flex-shrink: 0;">→</span><span style="font-size: 14px; color: var(--text-mid); line-height: 1.6;">Timeless over trendy. Nostalgia is welcome, but nothing dated or chasing a moment.</span></div>
+      <div style="display: flex; gap: 10px; align-items: flex-start;"><span style="color: var(--red); font-weight: 700; flex-shrink: 0;">→</span><span style="font-size: 14px; color: var(--text-mid); line-height: 1.6;">Warm, muted, tactile color language. Teal (not cyan), soft grain, human texture over anything oversaturated or digital feeling.</span></div>
+      <div style="display: flex; gap: 10px; align-items: flex-start;"><span style="color: var(--red); font-weight: 700; flex-shrink: 0;">→</span><span style="font-size: 14px; color: var(--text-mid); line-height: 1.6;">Serious craft, light touch. Quality, professional work that's never stiff or overly formal.</span></div>
     </div>
   </div>
 </div>
 
 <!-- CONCEPT A -->
-<div class="arc-s" style="background: var(--bg-2);">
+<div class="arc-s" id="concept-one" style="background: var(--bg-2);">
   <div class="arc-w">
-    <div class="arc-lbl">Concept A — Concept One</div>
-    <h2 class="arc-h1">Concept One.</h2>
-    <p class="arc-body ph-note">Placeholder — description copy pending. Visual system: hand-lettered wordmark, film-reel snail mark, warm documentary tone, teal &amp; coral palette.</p>
+    <div class="arc-lbl">Concept One</div>
+    <h2 class="arc-h1">Screeching</h2>
+    <p class="arc-body ph-note">Placeholder. Description copy pending. Visual system: hand-lettered wordmark, film-reel snail mark, warm documentary tone, teal &amp; coral palette.</p>
 
     <div class="moodboard-ph" style="padding: 0; overflow: hidden; margin-top: 32px;">
-      <img src="establishing_shot.png" class="zoomable" alt="Screeching Halt Presents — hands at a wood lathe" style="width: 100%; height: 100%; object-fit: cover;" />
+      <img src="establishing_shot.png" class="zoomable" alt="Screeching Halt Presents: hands at a wood lathe" style="width: 100%; height: 100%; object-fit: cover;" />
     </div>
     <div style="text-align: center;">
       <span class="caption-banner">warm, hands-on, documentary</span>
@@ -246,7 +280,7 @@
       </div>
       <div>
         <div class="arc-lbl" style="margin-bottom: 8px;">The system</div>
-        <div style="background: #fff; padding: 12px;"><img src="LogoFamily.png" class="zoomable" alt="Screeching Halt logo family — color and lockup variations" /></div>
+        <div style="background: #fff; padding: 12px;"><img src="LogoFamily.png" class="zoomable" alt="Screeching Halt logo family, color and lockup variations" /></div>
       </div>
     </div>
 
@@ -293,41 +327,59 @@
 </div>
 
 <!-- CONCEPT B -->
-<div class="arc-s" style="background: var(--bg);">
+<div class="arc-s" id="concept-two" style="background: var(--bg);">
   <div class="arc-w">
-    <div class="arc-lbl">Concept B — <span class="ph-note">Concept Two</span></div>
-    <h2 class="arc-h1"><span class="ph-note">Concept Two.</span></h2>
-    <p class="arc-body ph-note">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam quis nostrud.</p>
+    <div class="arc-lbl">Concept Two</div>
+    <h2 class="arc-h1">Halt</h2>
+    <p class="arc-body ph-note">Placeholder. Description copy pending. Visual system: script + bold wordmark, filmstrip "S" mark, teal, coral &amp; cream palette, paper grain texture.</p>
 
-    <div class="arc-tags">
-      <span class="arc-tag ph-note">Tag one</span>
-      <span class="arc-tag ph-note">Tag two</span>
-      <span class="arc-tag ph-note">Tag three</span>
-      <span class="arc-tag ph-note">Tag four</span>
-      <span class="arc-tag ph-note">Tag five</span>
-      <span class="arc-tag ph-note">Tag six</span>
-    </div>
-
-    <div class="moodboard-ph">
-      <div class="moodboard-ph-text">[MOODBOARD IMAGE PLACEHOLDER — CONCEPT TWO]</div>
+    <div class="moodboard-ph" style="padding: 0; overflow: hidden; margin-top: 32px;">
+      <img src="establishing_shot2.png" class="zoomable" alt="Screeching Halt Presents, hands at a wood lathe, Concept Two mark" style="width: 100%; height: 100%; object-fit: cover;" />
     </div>
     <div style="text-align: center;">
-      <span class="caption-banner">tone, feeling, vibe placeholder</span>
+      <span class="caption-banner">warm, hands-on, documentary</span>
     </div>
 
-    <div class="arc-g3">
-      <div>
-        <div class="arc-lbl" style="margin-bottom: 8px;">In the world</div>
-        <div class="g3-ph"><span class="g3-ph-text">[IMAGE PLACEHOLDER]</span></div>
-      </div>
+    <div class="arc-g3" style="grid-template-columns: 1fr 1fr; margin-top: 40px;">
       <div>
         <div class="arc-lbl" style="margin-bottom: 8px;">The mark</div>
-        <div class="g3-ph"><span class="g3-ph-text">[IMAGE PLACEHOLDER]</span></div>
+        <div style="background: #fff; padding: 12px;"><img src="PrimaryLogo2.png" class="zoomable" alt="Screeching Halt Productions primary logo, Concept Two" /></div>
       </div>
       <div>
         <div class="arc-lbl" style="margin-bottom: 8px;">The system</div>
-        <div class="g3-ph"><span class="g3-ph-text">[IMAGE PLACEHOLDER]</span></div>
+        <div style="background: #fff; padding: 12px;"><img src="LogoFamily2.png" class="zoomable" alt="Screeching Halt logo family, color and lockup variations, Concept Two" /></div>
       </div>
+    </div>
+
+    <!-- APPLICATIONS -->
+    <div class="arc-g3" style="grid-template-columns: 1fr 1fr 1fr; margin-top: 40px;">
+      <div>
+        <div class="arc-lbl" style="margin-bottom: 8px;">In the world</div>
+        <img src="vanity_card2.png" class="zoomable" alt="A Screeching Halt Production vanity card, Concept Two" />
+      </div>
+      <div>
+        <div class="arc-lbl" style="margin-bottom: 8px;">Watermark</div>
+        <img src="Watermark2.png" class="zoomable" alt="Screeching Halt watermark on a documentary shot, Concept Two" />
+      </div>
+      <div>
+        <div class="arc-lbl" style="margin-bottom: 8px;">End credits</div>
+        <img src="end_credits2.png" class="zoomable" alt="Screeching Halt end credits screen, Concept Two" />
+      </div>
+    </div>
+
+    <!-- COLOR & TYPE -->
+    <div class="arc-lbl" style="margin-top: 40px;">Color &amp; type</div>
+    <div style="margin-top: 12px; background: #fff; padding: 12px;">
+      <img src="ColorandType2.png" class="zoomable" alt="Screeching Halt color palette and typography reference, Concept Two" />
+    </div>
+
+    <div class="arc-tags" style="margin-top: 40px;">
+      <span class="arc-tag">Script + bold wordmark</span>
+      <span class="arc-tag">Filmstrip "S" mark</span>
+      <span class="arc-tag">Teal, coral &amp; cream palette</span>
+      <span class="arc-tag">Paper grain texture</span>
+      <span class="arc-tag">Documentary tone</span>
+      <span class="arc-tag">Playful pun</span>
     </div>
 
     <div class="tl-label">Tagline directions</div>
@@ -342,7 +394,7 @@
 </div>
 
 <!-- NEXT STEPS -->
-<div class="arc-s" style="background: var(--bg-2);">
+<div class="arc-s" id="next-steps" style="background: var(--bg-2);">
   <div class="arc-w">
     <div class="arc-lbl">Next steps from Presentation 01</div>
     <div style="margin-top: 12px;">
