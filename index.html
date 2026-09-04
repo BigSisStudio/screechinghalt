@@ -65,7 +65,7 @@
     .nav-links a:hover { color: var(--red); }
 
     .hero {
-      min-height: 60vh;
+      min-height: 72vh;
       background-image: url('header-hero.jpg');
       background-size: cover;
       background-position: center center;
@@ -87,6 +87,8 @@
       z-index: 0;
     }
     .hero-inner { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; width: 100%; }
+    .hero-logo-wrap { position: absolute; top: 48px; left: 0; right: 0; z-index: 2; }
+    .hero-logo-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
     .hero-label {
       color: var(--red); font-family: var(--ff-body); font-size: 12px;
       letter-spacing: .14em; text-transform: uppercase; font-weight: 600; margin-bottom: 24px;
@@ -207,8 +209,12 @@
 </nav>
 
 <section class="hero" id="top">
+  <div class="hero-logo-wrap">
+    <div class="hero-logo-inner">
+      <img src="BigSis_red.svg" alt="Big Sis Creative Studio" style="width: 40px;" />
+    </div>
+  </div>
   <div class="hero-inner">
-    <img src="BigSis_red.svg" alt="Big Sis Creative Studio" style="width: 40px; margin-bottom: 56px;" />
     <h1 class="hero-h1">Screeching Halt</h1>
     <div class="hero-label" style="font-size: 13px; margin-top: -8px; color: var(--text-inv-mid);">Initial Concept Review</div>
     <div class="hero-meta">Presentation 01 &nbsp;&middot;&nbsp; September 4, 2026</div>
