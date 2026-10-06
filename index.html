@@ -10,24 +10,30 @@
   <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Epilogue:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg:      #F4F2EA;
-      --bg-2:    #EAE5D8;
-      --bg-3:    #DED8C8;
-      --bg-4:    #D4CDB8;
-      --bg-dark: #2E1A0E;
+      /* Screeching Halt palette. Primaries: orange, cream, near-black. Secondaries: peach + three teals. */
+      --orange:     #EF4123;
+      --cream:      #F6EAD5;
+      --ink:        #231F20;
+      --peach:      #E58A67;
+      --teal-light: #7AB6AE;
+      --teal:       #36958B;
+      --teal-dark:  #204D4B;
 
-      --text:       rgba(46,26,14,1.0);
-      --text-mid:   rgba(46,26,14,0.65);
-      --text-dim:   rgba(46,26,14,0.40);
-      --text-inv:   rgba(244,242,234,1.0);
-      --text-inv-mid: rgba(244,242,234,0.6);
+      /* Cream tonal layers (derived from #F6EAD5, each step slightly deeper) */
+      --bg:      #F6EAD5;
+      --bg-2:    #EFE1C7;
+      --bg-3:    #E7D7BA;
+      --bg-4:    #DFCDAD;
+      --bg-dark: #231F20;
 
-      --red:    #E91A41;
-      --teal:   #3A887D;
-      --brown:  #4E0002;
+      --text:       rgba(35,31,32,1.0);
+      --text-mid:   #231F20;
+      --text-dim:   rgba(35,31,32,0.5);
+      --text-inv:   rgba(246,234,213,1.0);
+      --text-inv-mid: rgba(246,234,213,0.65);
 
-      --rule:      rgba(46,26,14,0.10);
-      --rule-inv:  rgba(244,242,234,0.12);
+      --rule:      rgba(35,31,32,0.12);
+      --rule-inv:  rgba(246,234,213,0.14);
 
       --ff-display: 'Dela Gothic One', sans-serif;
       --ff-body:    'Epilogue', sans-serif;
@@ -46,7 +52,7 @@
       position: sticky; top: 0; z-index: 100;
       height: 60px; padding: 0 40px;
       display: flex; align-items: center; justify-content: space-between;
-      background: rgba(244,242,234,0.94);
+      background: rgba(246,234,213,0.94);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--rule);
       overflow-x: auto;
@@ -63,7 +69,7 @@
       padding: 0 14px; height: 60px; display: flex; align-items: center;
       white-space: nowrap; text-decoration: none; transition: color .2s;
     }
-    .nav-links a:hover { color: var(--red); }
+    .nav-links a:hover { color: var(--orange); }
 
     .hero {
       min-height: 72vh;
@@ -80,10 +86,10 @@
       position: absolute; inset: 0;
       background: linear-gradient(
         to bottom,
-        rgba(15,15,15,0.15) 0%,
-        rgba(15,15,15,0.35) 45%,
-        rgba(15,15,15,0.82) 80%,
-        rgba(15,15,15,0.95) 100%
+        rgba(35,31,32,0.15) 0%,
+        rgba(35,31,32,0.35) 45%,
+        rgba(35,31,32,0.82) 80%,
+        rgba(35,31,32,0.95) 100%
       );
       z-index: 0;
     }
@@ -91,7 +97,7 @@
     .hero-logo-wrap { position: absolute; top: 48px; left: 0; right: 0; z-index: 2; }
     .hero-logo-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
     .hero-label {
-      color: var(--red); font-family: var(--ff-body); font-size: 12px;
+      color: var(--peach); font-family: var(--ff-body); font-size: 12px;
       letter-spacing: .14em; text-transform: uppercase; font-weight: 600; margin-bottom: 24px;
     }
     .hero-h1 {
@@ -106,7 +112,7 @@
 
     .arc-lbl {
       font-family: var(--ff-body); font-size: 10px; font-weight: 700;
-      letter-spacing: .16em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 8px;
+      letter-spacing: .16em; text-transform: uppercase; color: var(--orange); margin-bottom: 8px;
     }
     .arc-h1 {
       font-family: var(--ff-display); font-weight: 400; font-size: clamp(32px, 5vw, 48px);
@@ -121,7 +127,7 @@
     .arc-card-head { font-family: var(--ff-body); font-weight: 700; font-size: 16px; color: var(--text); margin-bottom: 14px; }
     .arc-card ul { list-style: none; padding: 0; margin: 0; }
     .arc-card li { font-size: 14px; color: var(--text-mid); padding: 5px 0; line-height: 1.6; padding-left: 20px; position: relative; }
-    .arc-card li::before { content: '→'; position: absolute; left: 0; color: var(--red); font-weight: 700; }
+    .arc-card li::before { content: '→'; position: absolute; left: 0; color: var(--orange); font-weight: 700; }
 
     .moodboard-ph {
       margin-top: 24px; background: #fff;
@@ -142,7 +148,7 @@
       padding: 10px 0; border-bottom: 1px solid var(--rule);
     }
     .tl-row:last-child { border-bottom: none; }
-    .tl-num { font-size: 12px; color: var(--text-dim); min-width: 24px; }
+    .tl-num { font-size: 12px; color: var(--teal); font-weight: 700; min-width: 24px; }
     .tl-text { font-size: 16px; color: var(--text); }
 
     .step {
@@ -150,7 +156,7 @@
     }
     .step:last-child { border-bottom: none; }
     .step-num {
-      font-family: var(--ff-display); font-weight: 400; font-size: 32px; color: var(--text-dim);
+      font-family: var(--ff-display); font-weight: 400; font-size: 32px; color: var(--teal);
       line-height: 1; flex-shrink: 0; min-width: 52px;
     }
     .step-body h3 { font-family: var(--ff-body); font-weight: 700; font-size: 15px; margin-bottom: 4px; }
@@ -162,14 +168,14 @@
       display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
     }
     .chip {
-      background: var(--red); color: white; font-family: var(--ff-body);
+      background: var(--orange); color: var(--ink); font-family: var(--ff-body);
       font-size: 10px; letter-spacing: .1em; text-transform: uppercase;
       padding: 4px 12px; font-weight: 700;
     }
     .footer-credit { color: var(--text-inv-mid); font-size: 12px; font-family: var(--ff-body); }
 
     /* archive drawer */
-    .archive-section { border-top: 3px solid var(--red); }
+    .archive-section { border-top: 3px solid var(--orange); }
     .archive-btn {
       width: 100%; background: var(--bg-3); border: none; padding: 20px 40px; cursor: pointer;
       display: flex; justify-content: space-between; align-items: center;
@@ -177,7 +183,7 @@
     }
     .archive-panel { max-height: 0; overflow: hidden; transition: max-height .6s ease; }
     .archive-panel.open { max-height: 99999px; }
-    .archive-btn .archive-chevron { transition: transform .35s ease; }
+    .archive-btn .archive-chevron { transition: transform .35s ease; color: var(--teal); }
     .archive-btn.open .archive-chevron { transform: rotate(180deg); }
 
     /* color option cards */
@@ -192,19 +198,19 @@
       width: 100%; height: 100%; border: 0;
       pointer-events: none;
     }
-    .palette-card-name { font-family: var(--ff-display); font-weight: 400; font-size: 22px; color: var(--text); margin-bottom: 10px; }
+    .palette-card-name { font-family: var(--ff-display); font-weight: 400; font-size: 22px; color: #231F20; margin-bottom: 10px; }
     .palette-card-body { font-size: 14px; color: var(--text-mid); line-height: 1.6; margin-bottom: 16px; }
     .swatch-row { display: flex; gap: 8px; margin-bottom: 18px; flex-wrap: wrap; }
     .swatch { width: 32px; height: 32px; border-radius: 4px; border: 1px solid var(--rule); }
     .palette-flag {
-      background: #FBD0D0; color: var(--brown); font-size: 12px; font-weight: 600;
+      background: #E58A67; color: var(--ink); font-size: 12px; font-weight: 600;
       padding: 8px 14px; margin-bottom: 16px; display: block;
     }
     .palette-link {
       display: inline-flex; align-items: center; gap: 6px;
       font-family: var(--ff-body); font-weight: 700; font-size: 13px;
-      letter-spacing: .04em; text-transform: uppercase; color: var(--red);
-      text-decoration: none; padding-bottom: 2px; border-bottom: 2px solid var(--red);
+      letter-spacing: .04em; text-transform: uppercase; color: var(--teal-dark);
+      text-decoration: none; padding-bottom: 2px; border-bottom: 2px solid var(--orange);
     }
 
     /* color bars (named swatch reference) */
@@ -224,7 +230,7 @@
     img.zoomable { cursor: zoom-in; transition: opacity .2s; }
     img.zoomable:hover { opacity: .85; }
     .lightbox-overlay {
-      position: fixed; inset: 0; background: rgba(20,12,7,0.92);
+      position: fixed; inset: 0; background: rgba(35,31,32,0.94);
       display: none; align-items: center; justify-content: center;
       padding: 40px; z-index: 9999; cursor: zoom-out;
     }
@@ -518,7 +524,7 @@
               <li>A discussion of logo, color, language, and tone. Not a vote.</li>
             </ul>
           </div>
-          <div style="width: 1px; align-self: stretch; background: var(--brown); opacity: 0.35;"></div>
+          <div style="width: 1px; align-self: stretch; background: var(--teal-dark); opacity: 0.35;"></div>
           <div class="arc-card" style="padding-left: 24px;">
             <div class="arc-card-head" style="font-size: 20px; color: var(--text-dim);">Down the road</div>
             <ul>
@@ -539,12 +545,12 @@
         <p class="arc-body" style="margin-bottom: 24px;">We had a great conversation last week working through the homework, and it informed our exploration. Thanks! Here's what stuck with us:</p>
 
         <div class="arc-g3" style="margin-top: 8px;">
-          <div style="display: flex; gap: 10px; align-items: flex-start;"><span style="color: var(--red); font-weight: 700; flex-shrink: 0;">→</span><span style="font-size: 14px; color: var(--text-mid); line-height: 1.6;">The snail nods to an early "Slow Series" idea, a symbol of stillness and presence, not slowness.</span></div>
-          <div style="display: flex; gap: 10px; align-items: flex-start;"><span style="color: var(--red); font-weight: 700; flex-shrink: 0;">→</span><span style="font-size: 14px; color: var(--text-mid); line-height: 1.6;">Confidence, not performance. Obama, Seth Rogen, and Amy Poehler all share comfort in their own skin. Nothing forced.</span></div>
-          <div style="display: flex; gap: 10px; align-items: flex-start;"><span style="color: var(--red); font-weight: 700; flex-shrink: 0;">→</span><span style="font-size: 14px; color: var(--text-mid); line-height: 1.6;">Boldness through the work, not the claim. It shouldn't read as bragging, it's confidence.</span></div>
-          <div style="display: flex; gap: 10px; align-items: flex-start;"><span style="color: var(--red); font-weight: 700; flex-shrink: 0;">→</span><span style="font-size: 14px; color: var(--text-mid); line-height: 1.6;">Timeless over trendy. Nostalgia is welcome, but nothing dated or chasing a moment.</span></div>
-          <div style="display: flex; gap: 10px; align-items: flex-start;"><span style="color: var(--red); font-weight: 700; flex-shrink: 0;">→</span><span style="font-size: 14px; color: var(--text-mid); line-height: 1.6;">Warm, muted, tactile color language. Teal (not cyan), soft grain, human texture over anything oversaturated or digital feeling.</span></div>
-          <div style="display: flex; gap: 10px; align-items: flex-start;"><span style="color: var(--red); font-weight: 700; flex-shrink: 0;">→</span><span style="font-size: 14px; color: var(--text-mid); line-height: 1.6;">Serious craft, light touch. Quality, professional work that's never stiff or overly formal.</span></div>
+          <div style="display: flex; gap: 10px; align-items: flex-start;"><span style="color: var(--orange); font-weight: 700; flex-shrink: 0;">→</span><span style="font-size: 14px; color: var(--text-mid); line-height: 1.6;">The snail nods to an early "Slow Series" idea, a symbol of stillness and presence, not slowness.</span></div>
+          <div style="display: flex; gap: 10px; align-items: flex-start;"><span style="color: var(--orange); font-weight: 700; flex-shrink: 0;">→</span><span style="font-size: 14px; color: var(--text-mid); line-height: 1.6;">Confidence, not performance. Obama, Seth Rogen, and Amy Poehler all share comfort in their own skin. Nothing forced.</span></div>
+          <div style="display: flex; gap: 10px; align-items: flex-start;"><span style="color: var(--orange); font-weight: 700; flex-shrink: 0;">→</span><span style="font-size: 14px; color: var(--text-mid); line-height: 1.6;">Boldness through the work, not the claim. It shouldn't read as bragging, it's confidence.</span></div>
+          <div style="display: flex; gap: 10px; align-items: flex-start;"><span style="color: var(--orange); font-weight: 700; flex-shrink: 0;">→</span><span style="font-size: 14px; color: var(--text-mid); line-height: 1.6;">Timeless over trendy. Nostalgia is welcome, but nothing dated or chasing a moment.</span></div>
+          <div style="display: flex; gap: 10px; align-items: flex-start;"><span style="color: var(--orange); font-weight: 700; flex-shrink: 0;">→</span><span style="font-size: 14px; color: var(--text-mid); line-height: 1.6;">Warm, muted, tactile color language. Teal (not cyan), soft grain, human texture over anything oversaturated or digital feeling.</span></div>
+          <div style="display: flex; gap: 10px; align-items: flex-start;"><span style="color: var(--orange); font-weight: 700; flex-shrink: 0;">→</span><span style="font-size: 14px; color: var(--text-mid); line-height: 1.6;">Serious craft, light touch. Quality, professional work that's never stiff or overly formal.</span></div>
         </div>
       </div>
     </div>
