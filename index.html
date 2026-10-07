@@ -62,14 +62,16 @@
       letter-spacing: .14em; text-transform: uppercase; color: var(--text);
       white-space: nowrap; flex-shrink: 0; padding-right: 24px;
     }
+    .nav-left { display: flex; align-items: center; flex-shrink: 0; }
+    .nav-left a, .nav-links a { }
     .nav-links { display: flex; align-items: center; gap: 4px; flex-shrink: 0; }
-    .nav-links a {
+    .nav-left a, .nav-links a {
       font-family: var(--ff-body); font-size: 10px; font-weight: 600;
       letter-spacing: .12em; text-transform: uppercase; color: var(--text-dim);
       padding: 0 14px; height: 60px; display: flex; align-items: center;
       white-space: nowrap; text-decoration: none; transition: color .2s;
     }
-    .nav-links a:hover { color: var(--orange); }
+    .nav-left a:hover, .nav-links a:hover { color: var(--orange); }
 
     .hero {
       min-height: 72vh;
@@ -241,11 +243,13 @@
 <body>
 
 <nav>
-  <span class="nav-project">Screeching Halt / Presentation 04</span>
+  <div class="nav-left">
+    <span class="nav-project">Screeching Halt / Presentation 04</span>
+  <a href="https://docs.google.com/spreadsheets/d/1tIp4nZ2gzHLFfxWq9gstKfMa_oLa3ealHF-XmSK5igw/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Project Tracker</a>
+  </div>
   <div class="nav-links">
     <a href="#snails">Snails</a>
     <a href="#archive">Previous</a>
-    <a href="https://docs.google.com/spreadsheets/d/1tIp4nZ2gzHLFfxWq9gstKfMa_oLa3ealHF-XmSK5igw/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Project Tracker</a>
   </div>
 </nav>
 
