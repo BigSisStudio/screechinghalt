@@ -276,7 +276,7 @@
     .dl-soon .dl-title { color: var(--text-dim); }
     .dl-soon .dl-desc { color: var(--text-dim); }
     .dl-tag { font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; background: var(--peach); color: var(--ink); padding: 6px 14px; white-space: nowrap; }
-    .dl-note { font-size: 13px; color: var(--text-mid); margin-top: 20px; max-width: 620px; }
+    .dl-note { font-style: italic; font-size: 13px; color: var(--text-mid); margin-top: 20px; max-width: 620px; }
 
     .sub-label { font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--teal-dark); margin-top: 8px; }
     .logo-cap { font-size: 12px; color: var(--text-dim); letter-spacing: .06em; margin-top: 2px; }
@@ -290,7 +290,7 @@
     .logo-block .brand-grid { margin-top: 0; gap: 32px; }
     .logo-stage { height: 200px; display: flex; align-items: center; justify-content: center; }
     .logo-stage img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; }
-    .logo-block .logo-label { color: inherit; justify-content: flex-start; margin-top: 20px; }
+    .logo-block .logo-label { color: inherit; justify-content: center; text-align: center; margin-top: 20px; }
     .logo-block-dark .logo-bar { background: var(--cream); opacity: .5; }
     @media (max-width: 800px) { .logo-block { padding: 32px 24px; } }
     @media (min-width: 1000px) { .pal-sm .pal-role { white-space: nowrap; font-size: 11.5px; } }
@@ -380,7 +380,7 @@
           <div class="dl-title">Brand Identity Files</div>
           <div class="dl-desc">Primary and secondary logos and snail mark in light and dark versions. File types: SVG, PNG, PDF, and EPS.</div>
         </div>
-        <a class="download-btn" href="https://drive.google.com/drive/folders/1oTs1j4-_FnUT_UwFAlcv-_k9bNK2VVz-" target="_blank" rel="noopener noreferrer">Go to downloads &#8599;</a>
+        <a class="download-btn" href="https://drive.google.com/drive/folders/10-Rzo3i3qVGygwYFQD6UqsJHt7QnHksd?usp=drive_link" target="_blank" rel="noopener noreferrer">Go to downloads &#8599;</a>
       </div>
     </div>
     <p class="dl-note">Files are added as they're finalized. Questions or missing something? Reach out to Big Sis.</p>
@@ -391,10 +391,10 @@
 <div class="arc-s" id="logos" style="background: var(--bg-3); scroll-margin-top: 60px;">
   <div class="arc-w">
     <div class="arc-lbl">Logo System</div>
-    <h2 class="arc-h1" style="font-size: clamp(28px, 4.5vw, 40px);">The mark</h2>
-    <p class="sub-label">Approved logo family</p>
+    <h2 class="arc-h1" style="font-size: clamp(28px, 4.5vw, 40px);">Approved logo family</h2>
 
-    <div class="logo-block logo-block-dark">
+    <p class="sub-label" style="margin-top: 28px;">Light version</p>
+    <div class="logo-block logo-block-dark" style="margin-top: 12px;">
       <div class="brand-grid">
         <div class="brand-item">
           <div class="logo-stage"><img src="SH_logo_primary_ivory@2x.png" class="zoomable" alt="Screeching Halt Productions primary horizontal logo in cream" /></div>
@@ -411,7 +411,8 @@
       </div>
     </div>
 
-    <div class="logo-block logo-block-light">
+    <p class="sub-label" style="margin-top: 32px;">Dark version</p>
+    <div class="logo-block logo-block-light" style="margin-top: 12px;">
       <div class="brand-grid">
         <div class="brand-item">
           <div class="logo-stage"><img src="SH_logo_primary_black@2x.png" class="zoomable" alt="Screeching Halt Productions primary horizontal logo in black" /></div>
