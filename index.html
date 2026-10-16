@@ -282,6 +282,19 @@
     .logo-cap { font-size: 12px; color: var(--text-dim); letter-spacing: .06em; margin-top: 2px; }
     .pal-role { font-size: 12px; font-weight: 600; margin-top: 8px; line-height: 1.4; }
 
+
+    /* logo blocks */
+    .logo-block { padding: 48px 40px 36px; margin-top: 24px; }
+    .logo-block-dark { background: var(--teal-dark); color: var(--cream); }
+    .logo-block-light { background: var(--cream); color: var(--ink); border: 1px solid var(--rule); }
+    .logo-block .brand-grid { margin-top: 0; gap: 32px; }
+    .logo-stage { height: 200px; display: flex; align-items: center; justify-content: center; }
+    .logo-stage img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; }
+    .logo-block .logo-label { color: inherit; justify-content: flex-start; margin-top: 20px; }
+    .logo-block-dark .logo-bar { background: var(--cream); opacity: .5; }
+    @media (max-width: 800px) { .logo-block { padding: 32px 24px; } }
+    @media (min-width: 1000px) { .pal-sm .pal-role { white-space: nowrap; font-size: 11.5px; } }
+
     /* palette */
     .pal-title { font-family: var(--ff-display); font-size: 22px; color: var(--ink); margin: 36px 0 14px; }
     .pal-grid { display: grid; gap: 16px; }
@@ -304,7 +317,7 @@
       background: url('logo-snail-black.svg') no-repeat center / contain; opacity: .06;
     }
     .snail-right::before { right: -90px; top: 30px; }
-    .snail-pattern::before { inset: 0; width: auto; height: auto; background: url('snail-pattern.svg') repeat; background-size: 260px 184px; opacity: .04; }
+    .snail-pattern::before { inset: 0; width: auto; height: auto; background: url('snail-pattern.svg') repeat; background-size: 260px 184px; opacity: .07; }
     .snail-bg > .arc-w { position: relative; z-index: 1; }
     footer { position: relative; overflow: hidden; }
     footer::after {
@@ -348,52 +361,26 @@
   </div>
   <div class="hero-inner">
     <h1 class="sr-only">Screeching Halt Productions</h1>
-    <img class="hero-logo-main" src="logo-primary-horizontal-cream.png" alt="Screeching Halt Productions" />
+    <img class="hero-logo-main" src="SH_logo_primary_ivory@2x.png" alt="Screeching Halt Productions" />
     <div class="hero-label hero-brandhub">Brand Hub</div>
     <div class="hero-meta" style="font-style: italic;">Last updated October 16, 2026</div>
   </div>
 </section>
 
-<!-- INFO STRIP -->
-<div class="arc-s" id="info" style="background: var(--bg); padding: 56px 0 48px;">
-  <div class="arc-w">
-    <div class="info-grid">
-      <div class="info-item"><div class="info-k">Status</div><div class="info-v">Logo and color locked in</div></div>
-      <div class="info-item"><div class="info-k">Hub updated</div><div class="info-v">October 16, 2026</div></div>
-      <div class="info-item"><div class="info-k">Prepared by</div><div class="info-v">Big Sis Creative Studio</div></div>
-    </div>
-    <p class="arc-body" style="margin-top: 28px;">Everything locked in so far for Screeching Halt Productions lives here. More gets added as each piece is finalized.</p>
-  </div>
-</div>
-
 <!-- DOWNLOADS -->
 <div class="arc-s snail-bg snail-right" id="downloads" style="background: var(--bg-2); scroll-margin-top: 60px;">
   <div class="arc-w">
     <div class="arc-lbl">Downloads</div>
-    <h2 class="arc-h1" style="font-size: clamp(28px, 4.5vw, 40px);">Brand Assets</h2>
-    <p class="arc-body">Production-ready files, grabbed straight from the folder.</p>
+    <h2 class="arc-h1" style="font-size: clamp(28px, 4.5vw, 40px);">Brand assets</h2>
+    <p class="arc-body">Production-ready files for all use cases, and ready to share with vendors.</p>
 
     <div class="dl-stack">
       <div class="dl-card">
         <div class="dl-text">
           <div class="dl-title">Brand Identity Files</div>
-          <div class="dl-desc">Logos in light and dark versions. File types: SVG, PNG, PDF, and EPS.</div>
+          <div class="dl-desc">Primary and secondary logos and snail mark in light and dark versions. File types: SVG, PNG, PDF, and EPS.</div>
         </div>
         <a class="download-btn" href="https://drive.google.com/drive/folders/1oTs1j4-_FnUT_UwFAlcv-_k9bNK2VVz-" target="_blank" rel="noopener noreferrer">Go to downloads &#8599;</a>
-      </div>
-      <div class="dl-card dl-soon">
-        <div class="dl-text">
-          <div class="dl-title">Brand Textures &amp; Patterns</div>
-          <div class="dl-desc">Textures and patterns built from the brand system.</div>
-        </div>
-        <span class="dl-tag">Coming soon</span>
-      </div>
-      <div class="dl-card dl-soon">
-        <div class="dl-text">
-          <div class="dl-title">Brand Guidelines PDF</div>
-          <div class="dl-desc">The full brand guidelines in one document.</div>
-        </div>
-        <span class="dl-tag">Coming soon</span>
       </div>
     </div>
     <p class="dl-note">Files are added as they're finalized. Questions or missing something? Reach out to Big Sis.</p>
@@ -401,45 +388,43 @@
 </div>
 
 <!-- LOGO SYSTEM -->
-<div class="arc-s" id="logos" style="background: var(--bg); scroll-margin-top: 60px;">
+<div class="arc-s" id="logos" style="background: var(--bg-3); scroll-margin-top: 60px;">
   <div class="arc-w">
     <div class="arc-lbl">Logo System</div>
-    <h2 class="arc-h1" style="font-size: clamp(28px, 4.5vw, 40px);">The mark.</h2>
-    <p class="sub-label">Approved color and background combinations</p>
+    <h2 class="arc-h1" style="font-size: clamp(28px, 4.5vw, 40px);">The mark</h2>
+    <p class="sub-label">Approved logo family</p>
 
-    <div class="brand-grid" style="margin-top: 20px;">
-      <div class="brand-item">
-        <div class="logo-card" style="background: var(--orange);"><img src="logo-primary-horizontal-cream.png" class="zoomable" alt="Screeching Halt Productions primary horizontal logo in cream" /></div>
-        <div class="logo-label"><span>Primary</span><span class="logo-bar"></span><span>Horizontal</span></div>
-        <div class="logo-cap">Cream on Orange</div>
-      </div>
-      <div class="brand-item">
-        <div class="logo-card" style="background: var(--teal-dark);"><img src="logo-secondary-stacked-cream.png" class="zoomable" alt="Screeching Halt Productions secondary stacked logo in cream" /></div>
-        <div class="logo-label"><span>Secondary</span><span class="logo-bar"></span><span>Stacked</span></div>
-        <div class="logo-cap">Cream on Dark Teal</div>
-      </div>
-      <div class="brand-item">
-        <div class="logo-card" style="background: var(--teal);"><img src="logo-snail-cream.svg" class="zoomable" alt="Snail icon in cream" style="width: 70%;" /></div>
-        <div class="logo-label"><span>Snail Icon (Name TBD)</span></div>
-        <div class="logo-cap">Cream on Teal</div>
+    <div class="logo-block logo-block-dark">
+      <div class="brand-grid">
+        <div class="brand-item">
+          <div class="logo-stage"><img src="SH_logo_primary_ivory@2x.png" class="zoomable" alt="Screeching Halt Productions primary horizontal logo in cream" /></div>
+          <div class="logo-label"><span>Primary</span><span class="logo-bar"></span><span>Horizontal</span></div>
+        </div>
+        <div class="brand-item">
+          <div class="logo-stage"><img src="SH_logo_secondary_ivory@2x.png" class="zoomable" alt="Screeching Halt Productions secondary stacked logo in cream" /></div>
+          <div class="logo-label"><span>Secondary</span><span class="logo-bar"></span><span>Stacked</span></div>
+        </div>
+        <div class="brand-item">
+          <div class="logo-stage"><img src="logo-snail-cream.svg" class="zoomable" alt="Snail icon in cream" style="width: 70%;" /></div>
+          <div class="logo-label"><span>Snail Icon (Name TBD)</span></div>
+        </div>
       </div>
     </div>
 
-    <div class="brand-grid">
-      <div class="brand-item">
-        <div class="logo-card logo-card-light"><img src="logo-primary-horizontal-black.png" class="zoomable" alt="Screeching Halt Productions primary horizontal logo in black" /></div>
-        <div class="logo-label"><span>Primary</span><span class="logo-bar"></span><span>Horizontal</span></div>
-        <div class="logo-cap">Black on Cream</div>
-      </div>
-      <div class="brand-item">
-        <div class="logo-card logo-card-light"><img src="logo-secondary-stacked-black.png" class="zoomable" alt="Screeching Halt Productions secondary stacked logo in black" /></div>
-        <div class="logo-label"><span>Secondary</span><span class="logo-bar"></span><span>Stacked</span></div>
-        <div class="logo-cap">Black on Cream</div>
-      </div>
-      <div class="brand-item">
-        <div class="logo-card logo-card-light"><img src="logo-snail-black.svg" class="zoomable" alt="Snail icon in black" style="width: 70%;" /></div>
-        <div class="logo-label"><span>Snail Icon (Name TBD)</span></div>
-        <div class="logo-cap">Black on Cream</div>
+    <div class="logo-block logo-block-light">
+      <div class="brand-grid">
+        <div class="brand-item">
+          <div class="logo-stage"><img src="SH_logo_primary_black@2x.png" class="zoomable" alt="Screeching Halt Productions primary horizontal logo in black" /></div>
+          <div class="logo-label"><span>Primary</span><span class="logo-bar"></span><span>Horizontal</span></div>
+        </div>
+        <div class="brand-item">
+          <div class="logo-stage"><img src="SH_logo_secondary_black@2x.png" class="zoomable" alt="Screeching Halt Productions secondary stacked logo in black" /></div>
+          <div class="logo-label"><span>Secondary</span><span class="logo-bar"></span><span>Stacked</span></div>
+        </div>
+        <div class="brand-item">
+          <div class="logo-stage"><img src="logo-snail-black.svg" class="zoomable" alt="Snail icon in black" style="width: 70%;" /></div>
+          <div class="logo-label"><span>Snail Icon (Name TBD)</span></div>
+        </div>
       </div>
     </div>
   </div>
@@ -454,17 +439,17 @@
 
     <div class="pal-title">Hero palette</div>
     <div class="pal-grid pal-grid-3">
-      <div class="pal-swatch pal-big" style="background:#EF4123; color:#231F20;"><div class="pal-name">Orange</div><div class="pal-hex">#EF4123</div><div class="pal-spec">C0 M90 Y100 K0<br>RGB 239, 65, 35</div><div class="pal-role">The lead. Logo backgrounds and key moments.</div></div>
-      <div class="pal-swatch pal-big pal-edge" style="background:#F6EAD5; color:#231F20;"><div class="pal-name">Cream</div><div class="pal-hex">#F6EAD5</div><div class="pal-spec">C3 M6 Y16 K0<br>RGB 246, 234, 213</div><div class="pal-role">The base. Backgrounds, and type on dark.</div></div>
-      <div class="pal-swatch pal-big" style="background:#231F20; color:#F6EAD5;"><div class="pal-name">Near-Black</div><div class="pal-hex">#231F20</div><div class="pal-spec">C0 M0 Y0 K100<br>RGB 35, 31, 32</div><div class="pal-role">The anchor. Text and dark sections.</div></div>
+      <div class="pal-swatch pal-big" style="background:#EF4123; color:#231F20;"><div class="pal-hex">#EF4123</div><div class="pal-spec">C0 M90 Y100 K0<br>RGB 239, 65, 35</div><div class="pal-role">The lead. Logo backgrounds and key moments.</div></div>
+      <div class="pal-swatch pal-big pal-edge" style="background:#F6EAD5; color:#231F20;"><div class="pal-hex">#F6EAD5</div><div class="pal-spec">C3 M6 Y16 K0<br>RGB 246, 234, 213</div><div class="pal-role">The base. Backgrounds, and type on dark.</div></div>
+      <div class="pal-swatch pal-big" style="background:#231F20; color:#F6EAD5;"><div class="pal-hex">#231F20</div><div class="pal-spec">C0 M0 Y0 K100<br>RGB 35, 31, 32</div><div class="pal-role">The anchor. Text and dark sections.</div></div>
     </div>
 
     <div class="pal-title" style="margin-top: 48px;">Secondary palette</div>
     <div class="pal-grid pal-grid-4">
-      <div class="pal-swatch pal-sm" style="background:#E58A67; color:#231F20;"><div class="pal-name">Peach</div><div class="pal-hex">#E58A67</div><div class="pal-spec">C7 M54 Y62 K0<br>RGB 229, 138, 103</div><div class="pal-role">Warm accent. Pairs with orange.</div></div>
-      <div class="pal-swatch pal-sm" style="background:#7AB6AE; color:#231F20;"><div class="pal-name">Light Teal</div><div class="pal-hex">#7AB6AE</div><div class="pal-spec">C53 M12 Y34 K0<br>RGB 122, 182, 174</div><div class="pal-role">Soft accent. Highlights and dividers.</div></div>
-      <div class="pal-swatch pal-sm" style="background:#36958B; color:#231F20;"><div class="pal-name">Teal</div><div class="pal-hex">#36958B</div><div class="pal-spec">C77 M23 Y50 K2<br>RGB 54, 149, 139</div><div class="pal-role">Cool accent. Labels and differentiators.</div></div>
-      <div class="pal-swatch pal-sm" style="background:#204D4B; color:#F6EAD5;"><div class="pal-name">Dark Teal</div><div class="pal-hex">#204D4B</div><div class="pal-spec">C85 M51 Y61 K39<br>RGB 32, 77, 75</div><div class="pal-role">Deep accent. Headings and dark backgrounds.</div></div>
+      <div class="pal-swatch pal-sm" style="background:#E58A67; color:#231F20;"><div class="pal-hex">#E58A67</div><div class="pal-spec">C7 M54 Y62 K0<br>RGB 229, 138, 103</div><div class="pal-role">Warm accent. Pairs with orange.</div></div>
+      <div class="pal-swatch pal-sm" style="background:#7AB6AE; color:#231F20;"><div class="pal-hex">#7AB6AE</div><div class="pal-spec">C53 M12 Y34 K0<br>RGB 122, 182, 174</div><div class="pal-role">Soft accent. Highlights, dividers.</div></div>
+      <div class="pal-swatch pal-sm" style="background:#36958B; color:#231F20;"><div class="pal-hex">#36958B</div><div class="pal-spec">C77 M23 Y50 K2<br>RGB 54, 149, 139</div><div class="pal-role">Cool accent. Labels and contrast.</div></div>
+      <div class="pal-swatch pal-sm" style="background:#204D4B; color:#F6EAD5;"><div class="pal-hex">#204D4B</div><div class="pal-spec">C85 M51 Y61 K39<br>RGB 32, 77, 75</div><div class="pal-role">Deep accent. Headings, dark fields.</div></div>
     </div>
   </div>
 </div>
