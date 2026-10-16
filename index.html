@@ -323,8 +323,9 @@
     /* color rules */
     .rules-panel { background: var(--cream); color: var(--ink); padding: 40px; margin-top: 56px; }
     .rules-panel h3 { font-family: var(--ff-display); font-size: 22px; color: var(--ink); margin-bottom: 8px; }
-    .rules-intro { font-size: 14px; max-width: 640px; margin-bottom: 8px; }
-    .rules-flag { background: var(--ink); color: var(--cream); padding: 20px 24px; margin: 24px 0 8px; font-size: 15px; line-height: 1.6; }
+    .rules-intro { font-size: 14px; max-width: 700px; margin-bottom: 12px; }
+    .rules-explain { font-size: 12px; font-style: italic; line-height: 1.45; margin-top: -4px; }
+    .rules-flag { background: var(--ink); color: var(--cream); padding: 20px 24px; margin: 36px 0 0; font-size: 15px; line-height: 1.6; }
     .rules-flag strong { font-family: 'Jost', var(--ff-body); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--peach); display: block; margin-bottom: 4px; font-size: 14px; }
     .rule-group { font-family: 'Jost', var(--ff-body); font-weight: 700; font-size: 15px; letter-spacing: .14em; text-transform: uppercase; color: var(--teal-dark); margin: 36px 0 4px; }
     .rule-sub { font-size: 13px; margin-bottom: 14px; }
@@ -492,17 +493,18 @@
 
     <div class="rules-panel">
       <h3>Color rules</h3>
-      <p class="rules-intro">Ratios follow WCAG AA: 4.5:1 for text, 3:1 for large type. Large type means 24px and up, or bold 19px and up.</p>
+      <p class="rules-intro">Following these rules keeps Screeching Halt work easy to read and consistent, so your audience gets the best experience possible.</p>
+      <p class="rules-intro rules-explain">Contrast ratio measures how clearly one color stands out from another, from 1:1 (no difference) to 21:1 (black on white). The accessibility standard is WCAG AA, short for Web Content Accessibility Guidelines, level AA. It asks for at least 4.5:1 for regular text and 3:1 for large type. Each pairing below shows its ratio.</p>
 
-      <div class="rules-flag"><strong>The Halloween rule</strong>Never set black type on orange. Don't build a layout from only orange and black. Cream leads, and orange and teal accent.</div>
 
       <div class="rule-group">Use for all text</div>
       <p class="rule-sub">4.5:1 or higher. Safe at any size.</p>
       <div class="rule-grid"><div class="rule-tile"><div class="rule-sample" style="background:#F6EAD5; color:#231F20;">Aa</div><div class="rule-name">Black on cream</div><div class="rule-note">13.7:1. Body copy, headings, captions.</div></div><div class="rule-tile"><div class="rule-sample" style="background:#231F20; color:#F6EAD5;">Aa</div><div class="rule-name">Cream on black</div><div class="rule-note">13.7:1. All type on dark sections.</div></div><div class="rule-tile"><div class="rule-sample" style="background:#204D4B; color:#F6EAD5;">Aa</div><div class="rule-name">Cream on deep teal</div><div class="rule-note">7.9:1. All type on teal fields.</div></div><div class="rule-tile"><div class="rule-sample" style="background:#F6EAD5; color:#204D4B;">Aa</div><div class="rule-name">Deep teal on cream</div><div class="rule-note">7.9:1. Headings and labels.</div></div><div class="rule-tile"><div class="rule-sample" style="background:#E58A67; color:#231F20;">Aa</div><div class="rule-name">Black on peach</div><div class="rule-note">6.3:1. Callouts and tags.</div></div><div class="rule-tile"><div class="rule-sample" style="background:#7AB6AE; color:#231F20;">Aa</div><div class="rule-name">Black on soft teal</div><div class="rule-note">7.1:1. Callouts and tags.</div></div></div>
 
       <div class="rule-group">Large type only</div>
-      <p class="rule-sub">3:1 to 4.5:1. Headlines, buttons and big numbers. Never body copy.</p>
+      <p class="rule-sub">3:1 to 4.5:1. Headlines, buttons and big numbers. Never body copy. Large type means 24px and up, or bold 19px and up.</p>
       <div class="rule-grid"><div class="rule-tile"><div class="rule-sample" style="background:#EF4123; color:#F6EAD5;">Aa</div><div class="rule-name">Cream on orange</div><div class="rule-note">3.2:1. Headlines and buttons only.</div></div><div class="rule-tile"><div class="rule-sample" style="background:#F6EAD5; color:#EF4123;">Aa</div><div class="rule-name">Orange on cream</div><div class="rule-note">3.2:1. Headlines and accents only.</div></div><div class="rule-tile"><div class="rule-sample" style="background:#231F20; color:#EF4123;">Aa</div><div class="rule-name">Orange on black</div><div class="rule-note">4.2:1. Headlines on dark only.</div></div><div class="rule-tile"><div class="rule-sample" style="background:#204D4B; color:#7AB6AE;">Aa</div><div class="rule-name">Soft teal on deep teal</div><div class="rule-note">4.1:1. Headlines on teal only.</div></div><div class="rule-tile"><div class="rule-sample" style="background:#204D4B; color:#E58A67;">Aa</div><div class="rule-name">Peach on deep teal</div><div class="rule-note">3.7:1. Headlines on teal only.</div></div><div class="rule-tile"><div class="rule-sample" style="background:#36958B; color:#F6EAD5;">Aa</div><div class="rule-name">Cream on teal</div><div class="rule-note">3.0:1. Headlines on teal only.</div></div></div>
+
 
       <div class="rule-group">Do not use</div>
       <p class="rule-sub">Below 3:1, or a combination that clashes.</p>
