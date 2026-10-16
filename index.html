@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Screeching Halt / Presentation 04</title>
+  <title>Screeching Halt / Brand Hub</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Epilogue:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet">
@@ -74,13 +74,13 @@
     .nav-left a:hover, .nav-links a:hover { color: var(--orange); }
 
     .hero {
-      min-height: 72vh;
+      min-height: 80vh;
       background-image: url('header-hero.jpg');
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
-      display: flex; align-items: flex-end;
-      padding: 64px 40px;
+      display: flex; align-items: center;
+      padding: 120px 40px 64px;
       position: relative;
     }
     .hero::before {
@@ -95,7 +95,9 @@
       );
       z-index: 0;
     }
-    .hero-inner { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; width: 100%; }
+    .hero-inner { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; width: 100%; text-align: center; }
+    .hero-logo-main { width: min(560px, 80%); height: auto; margin: 0 auto 32px; filter: drop-shadow(0 4px 20px rgba(0,0,0,0.45)); }
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
     .hero-logo-wrap { position: absolute; top: 48px; left: 0; right: 0; z-index: 2; }
     .hero-logo-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
     .hero-label {
@@ -228,6 +230,63 @@
     }
     .bar-swatch-cmyk { font-size: 11px; color: var(--text-dim); margin-top: 2px; line-height: 1.5; }
 
+
+    /* logos */
+    .logo-row { margin-top: 40px; }
+    .logo-label {
+      display: flex; align-items: center; gap: 16px; margin-bottom: 14px;
+      font-family: var(--ff-display); font-size: 22px; color: var(--ink);
+    }
+    .logo-bar { width: 2px; height: 24px; background: var(--teal-dark); opacity: .5; }
+    .logo-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    @media (max-width: 700px) { .logo-pair { grid-template-columns: 1fr; } }
+    .logo-card { height: 320px; display: flex; align-items: center; justify-content: center; padding: 40px; }
+    .logo-card img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; }
+    .logo-card-light { background: var(--cream); border: 1px solid var(--rule); }
+
+    .download-block { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--rule); scroll-margin-top: 80px; }
+    .download-types {
+      font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--ink); margin-bottom: 14px;
+    }
+    .download-btn {
+      display: inline-block; background: var(--orange); color: var(--ink); text-decoration: none;
+      font-family: var(--ff-body); font-weight: 700; font-size: 13px; letter-spacing: .1em; text-transform: uppercase;
+      padding: 16px 32px; transition: background .2s, color .2s;
+    }
+    .download-btn:hover { background: var(--teal-dark); color: var(--cream); }
+
+    /* palette */
+    .pal-title { font-family: var(--ff-display); font-size: 22px; color: var(--ink); margin: 36px 0 14px; }
+    .pal-grid { display: grid; gap: 16px; }
+    .pal-grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .pal-grid-4 { grid-template-columns: repeat(4, 1fr); }
+    @media (max-width: 800px) { .pal-grid-3, .pal-grid-4 { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 520px) { .pal-grid-3, .pal-grid-4 { grid-template-columns: 1fr; } }
+    .pal-swatch { padding: 24px; display: flex; flex-direction: column; justify-content: flex-end; }
+    .pal-big { min-height: 240px; }
+    .pal-sm { min-height: 180px; padding: 20px; }
+    .pal-edge { border: 1px solid var(--rule); }
+    .pal-name { font-family: var(--ff-display); font-size: 18px; margin-bottom: 4px; }
+    .pal-hex { font-weight: 700; font-size: 15px; letter-spacing: .04em; margin-bottom: 6px; }
+    .pal-spec { font-size: 12px; line-height: 1.5; opacity: .85; }
+
+    /* snail as background element */
+    .snail-bg { position: relative; overflow: hidden; }
+    .snail-bg::before {
+      content: ''; position: absolute; width: 520px; height: 370px; pointer-events: none;
+      background: url('logo-snail-black.svg') no-repeat center / contain; opacity: .06;
+    }
+    .snail-right::before { right: -90px; top: 30px; }
+    .snail-left::before { left: -110px; bottom: -40px; transform: scaleX(-1); }
+    .snail-bg > .arc-w { position: relative; z-index: 1; }
+    footer { position: relative; overflow: hidden; }
+    footer::after {
+      content: ''; position: absolute; right: 40px; bottom: -30px; width: 260px; height: 185px; pointer-events: none;
+      background: url('logo-snail-cream.svg') no-repeat center / contain; opacity: .08;
+    }
+    .footer-inner { position: relative; z-index: 1; }
+
     /* lightbox */
     img.zoomable { cursor: zoom-in; transition: opacity .2s; }
     img.zoomable:hover { opacity: .85; }
@@ -244,11 +303,13 @@
 
 <nav>
   <div class="nav-left">
-    <span class="nav-project">Screeching Halt / Presentation 04</span>
+    <span class="nav-project">Screeching Halt / Brand Hub</span>
   <a href="https://docs.google.com/spreadsheets/d/1tIp4nZ2gzHLFfxWq9gstKfMa_oLa3ealHF-XmSK5igw/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Project Tracker</a>
   </div>
   <div class="nav-links">
-    <a href="#snails">Snails</a>
+    <a href="#logos">Logos</a>
+    <a href="#colors">Colors</a>
+    <a href="#downloads">Downloads</a>
     <a href="#archive">Previous</a>
   </div>
 </nav>
@@ -260,19 +321,69 @@
     </div>
   </div>
   <div class="hero-inner">
-    <h1 class="hero-h1">Screeching Halt</h1>
-    <div class="hero-label" style="font-size: 16px; margin-top: -8px;">Snail Size Selection</div>
-    <div class="hero-meta">Presentation 04 &nbsp;&middot;&nbsp; October 7, 2026</div>
+    <h1 class="sr-only">Screeching Halt Productions</h1>
+    <img class="hero-logo-main" src="screeching-halt-logo-cream.png" alt="Screeching Halt Productions" />
+    <div class="hero-label" style="font-size: 16px;">Brand Hub</div>
+    <div class="hero-meta">Last updated October 16, 2026</div>
   </div>
 </section>
 
-<!-- SNAILS -->
-<div class="arc-s" id="snails" style="background: var(--bg);">
+<!-- LOGOS -->
+<div class="arc-s snail-bg snail-right" id="logos" style="background: var(--bg-2);">
   <div class="arc-w">
-    <div class="arc-lbl">Snails</div>
-    <h2 class="arc-h1" style="font-size: clamp(28px, 4.5vw, 40px);">Finding the one that's just right</h2>
-    <div style="margin-top: 32px; background: #fff; padding: 24px;">
-      <img src="snail-size-options.png" class="zoomable" alt="Snail size options at original, 110 percent, and 120 percent, locked up with the primary horizontal and secondary stacked Screeching Halt Productions logos" />
+    <div class="arc-lbl">Logos</div>
+    <h2 class="arc-h1" style="font-size: clamp(28px, 4.5vw, 40px);">The logo family</h2>
+
+    <div class="logo-row">
+      <div class="logo-label"><span>Primary</span><span class="logo-bar"></span><span>Horizontal</span></div>
+      <div class="logo-pair">
+        <div class="logo-card" style="background: var(--orange);"><img src="logo-primary-horizontal-cream.png" class="zoomable" alt="Screeching Halt Productions primary horizontal logo in cream" /></div>
+        <div class="logo-card logo-card-light"><img src="logo-primary-horizontal-black.png" class="zoomable" alt="Screeching Halt Productions primary horizontal logo in black" /></div>
+      </div>
+    </div>
+
+    <div class="logo-row">
+      <div class="logo-label"><span>Secondary</span><span class="logo-bar"></span><span>Stacked</span></div>
+      <div class="logo-pair">
+        <div class="logo-card" style="background: var(--teal-dark);"><img src="logo-secondary-stacked-cream.png" class="zoomable" alt="Screeching Halt Productions secondary stacked logo in cream" style="max-width: 300px;" /></div>
+        <div class="logo-card logo-card-light"><img src="logo-secondary-stacked-black.png" class="zoomable" alt="Screeching Halt Productions secondary stacked logo in black" style="max-width: 300px;" /></div>
+      </div>
+    </div>
+
+    <div class="logo-row">
+      <div class="logo-label"><span>Snail Icon (Name TBD)</span></div>
+      <div class="logo-pair">
+        <div class="logo-card" style="background: var(--teal);"><img src="logo-snail-cream.svg" class="zoomable" alt="Snail icon in cream" style="width: 260px;" /></div>
+        <div class="logo-card logo-card-light"><img src="logo-snail-black.svg" class="zoomable" alt="Snail icon in black" style="width: 260px;" /></div>
+      </div>
+    </div>
+
+    <div class="download-block" id="downloads">
+      <p class="download-types">File types: SVG, PNG, PDF, and EPS</p>
+      <a class="download-btn" href="https://drive.google.com/drive/folders/1oTs1j4-_FnUT_UwFAlcv-_k9bNK2VVz-" target="_blank" rel="noopener noreferrer">Download Files</a>
+    </div>
+  </div>
+</div>
+
+<!-- COLORS -->
+<div class="arc-s snail-bg snail-left" id="colors" style="background: var(--bg);">
+  <div class="arc-w">
+    <div class="arc-lbl">Color</div>
+    <h2 class="arc-h1" style="font-size: clamp(28px, 4.5vw, 40px);">The palette</h2>
+
+    <div class="pal-title">Hero palette</div>
+    <div class="pal-grid pal-grid-3">
+      <div class="pal-swatch pal-big" style="background:#EF4123; color:#231F20;"><div class="pal-name">Orange</div><div class="pal-hex">#EF4123</div><div class="pal-spec">C0 M90 Y100 K0<br>RGB 239, 65, 35</div></div>
+      <div class="pal-swatch pal-big pal-edge" style="background:#F6EAD5; color:#231F20;"><div class="pal-name">Cream</div><div class="pal-hex">#F6EAD5</div><div class="pal-spec">C3 M6 Y16 K0<br>RGB 246, 234, 213</div></div>
+      <div class="pal-swatch pal-big" style="background:#231F20; color:#F6EAD5;"><div class="pal-name">Near-Black</div><div class="pal-hex">#231F20</div><div class="pal-spec">C0 M0 Y0 K100<br>RGB 35, 31, 32</div></div>
+    </div>
+
+    <div class="pal-title" style="margin-top: 48px;">Secondary palette</div>
+    <div class="pal-grid pal-grid-4">
+      <div class="pal-swatch pal-sm" style="background:#E58A67; color:#231F20;"><div class="pal-name">Peach</div><div class="pal-hex">#E58A67</div><div class="pal-spec">C7 M54 Y62 K0<br>RGB 229, 138, 103</div></div>
+      <div class="pal-swatch pal-sm" style="background:#7AB6AE; color:#231F20;"><div class="pal-name">Light Teal</div><div class="pal-hex">#7AB6AE</div><div class="pal-spec">C53 M12 Y34 K0<br>RGB 122, 182, 174</div></div>
+      <div class="pal-swatch pal-sm" style="background:#36958B; color:#231F20;"><div class="pal-name">Teal</div><div class="pal-hex">#36958B</div><div class="pal-spec">C77 M23 Y50 K2<br>RGB 54, 149, 139</div></div>
+      <div class="pal-swatch pal-sm" style="background:#204D4B; color:#F6EAD5;"><div class="pal-name">Dark Teal</div><div class="pal-hex">#204D4B</div><div class="pal-spec">C85 M51 Y61 K39<br>RGB 32, 77, 75</div></div>
     </div>
   </div>
 </div>
@@ -286,6 +397,27 @@
 
 <!-- ARCHIVE: PREVIOUS PRESENTATIONS -->
 <div id="archive">
+
+<div class="archive-section">
+  <button class="archive-btn" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open')">
+    <span>Presentation 04: Snail Size Selection</span>
+    <span class="archive-chevron">↓</span>
+  </button>
+  <div class="archive-panel">
+
+<!-- SNAILS -->
+<div class="arc-s" style="background: var(--bg);">
+  <div class="arc-w">
+    <div class="arc-lbl">Snails</div>
+    <h2 class="arc-h1" style="font-size: clamp(28px, 4.5vw, 40px);">Finding the one that's just right</h2>
+    <div style="margin-top: 32px; background: #fff; padding: 24px;">
+      <img src="snail-size-options.png" class="zoomable" alt="Snail size options at original, 110 percent, and 120 percent, locked up with the primary horizontal and secondary stacked Screeching Halt Productions logos" />
+    </div>
+  </div>
+</div>
+
+  </div>
+</div>
 
 <div class="archive-section">
   <button class="archive-btn" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open')">
