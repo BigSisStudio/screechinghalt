@@ -7,7 +7,7 @@
   <title>Screeching Halt / Brand Hub</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Epilogue:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,400&family=Oswald:wght@500&family=Jost:wght@700&family=Inter:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,400&family=Oswald:wght@500&family=Jost:wght@700&family=Inter:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <style>
     :root {
       /* Screeching Halt palette. Primaries: orange, cream, near-black. Secondaries: peach + three teals. */
@@ -35,7 +35,7 @@
       --rule:      rgba(35,31,32,0.12);
       --rule-inv:  rgba(246,234,213,0.14);
 
-      --ff-display: 'Dela Gothic One', sans-serif;
+      --ff-display: 'Oswald', sans-serif;
       --ff-body:    'Epilogue', sans-serif;
 
       --max: 1200px;
@@ -44,7 +44,7 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body { background: var(--bg); color: var(--text); font-family: var(--ff-body); font-size: 16px; line-height: 1.7; }
-    h1, h2, h3, h4, h5, h6 { font-weight: 400; }
+    h1, h2, h3, h4, h5, h6 { font-weight: 500; }
     img { display: block; max-width: 100%; height: auto; }
     a { color: inherit; }
 
@@ -104,7 +104,7 @@
       letter-spacing: .14em; text-transform: uppercase; font-weight: 600; margin-bottom: 24px;
     }
     .hero-h1 {
-      font-family: var(--ff-display); font-weight: 400;
+      font-family: var(--ff-display); font-weight: 500;
       font-size: clamp(40px, 7vw, 80px); color: var(--text-inv); line-height: 1.0; margin-bottom: 24px;
       text-shadow: 0 4px 20px rgba(0,0,0,0.55), 0 2px 6px rgba(0,0,0,0.45);
     }
@@ -119,7 +119,7 @@
       letter-spacing: .16em; text-transform: uppercase; color: var(--orange); margin-bottom: 8px;
     }
     .arc-h1 {
-      font-family: var(--ff-display); font-weight: 400; font-size: clamp(32px, 5vw, 48px);
+      font-family: var(--ff-display); font-weight: 500; font-size: clamp(32px, 5vw, 48px);
       color: var(--text); margin-bottom: 16px;
     }
     .arc-body {
@@ -160,7 +160,7 @@
     }
     .step:last-child { border-bottom: none; }
     .step-num {
-      font-family: var(--ff-display); font-weight: 400; font-size: 32px; color: var(--teal);
+      font-family: var(--ff-display); font-weight: 500; font-size: 32px; color: var(--teal);
       line-height: 1; flex-shrink: 0; min-width: 52px;
     }
     .step-body h3 { font-family: var(--ff-body); font-weight: 700; font-size: 15px; margin-bottom: 4px; }
@@ -183,7 +183,7 @@
     .archive-btn {
       width: 100%; background: var(--bg-3); border: none; padding: 20px 40px; cursor: pointer;
       display: flex; justify-content: space-between; align-items: center;
-      font-family: var(--ff-display); font-weight: 400; font-size: 16px; color: var(--text);
+      font-family: var(--ff-display); font-weight: 500; font-size: 16px; color: var(--text);
     }
     .archive-btn { border-bottom: 1px solid var(--rule); }
     .archive-panel .arc-s + .arc-s { border-top: 1px solid var(--rule); }
@@ -204,7 +204,7 @@
       width: 100%; height: 100%; border: 0;
       pointer-events: none;
     }
-    .palette-card-name { font-family: var(--ff-display); font-weight: 400; font-size: 22px; color: #231F20; margin-bottom: 10px; }
+    .palette-card-name { font-family: var(--ff-display); font-weight: 500; font-size: 22px; color: #231F20; margin-bottom: 10px; }
     .palette-card-body { font-size: 14px; color: var(--text-mid); line-height: 1.6; margin-bottom: 16px; }
     .swatch-row { display: flex; gap: 8px; margin-bottom: 18px; flex-wrap: wrap; }
     .swatch { width: 32px; height: 32px; border-radius: 4px; border: 1px solid var(--rule); }
@@ -221,7 +221,7 @@
 
     /* color bars (named swatch reference) */
     .bar-group { margin-top: 40px; }
-    .bar-group-name { font-family: var(--ff-display); font-weight: 400; font-size: 20px; color: var(--text); margin-bottom: 4px; }
+    .bar-group-name { font-family: var(--ff-display); font-weight: 500; font-size: 20px; color: var(--text); margin-bottom: 4px; }
     .bar-group-note { font-size: 13px; color: var(--text-mid); margin-bottom: 18px; max-width: 620px; }
     .bar-row { display: flex; flex-wrap: wrap; gap: 16px; }
     .bar-swatch { width: 148px; }
@@ -237,9 +237,9 @@
     .logo-row { margin-top: 40px; }
     .logo-label {
       display: flex; align-items: center; gap: 16px; margin-bottom: 14px;
-      font-family: var(--ff-display); font-size: 22px; color: var(--ink);
+      font-family: var(--ff-display); font-weight: 500; font-size: 22px; color: var(--ink);
     }
-    .logo-bar { width: 2px; height: 24px; background: var(--teal-dark); opacity: .5; }
+    .logo-bar { width: 1px; height: 12px; background: var(--teal-dark); opacity: .5; }
     .logo-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
     @media (max-width: 700px) { .logo-pair { grid-template-columns: 1fr; } }
     .logo-card { height: 260px; display: flex; align-items: center; justify-content: center; padding: 32px; }
@@ -254,10 +254,10 @@
       font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
       color: var(--ink); margin-bottom: 14px;
     }
-    .download-btn {
+        .download-btn {
       display: inline-block; background: var(--orange); color: var(--cream); text-decoration: none;
-      font-family: 'Jost', var(--ff-body); font-weight: 700; font-size: 20px; letter-spacing: .08em; text-transform: uppercase;
-      padding: 14px 32px; transition: background .2s, color .2s;
+      font-family: 'Jost', var(--ff-body); font-weight: 700; font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase;
+      padding: 6px 16px; transition: background .2s, color .2s;
     }
     .download-btn:hover { background: var(--teal-dark); color: var(--cream); }
 
@@ -269,13 +269,13 @@
     .info-v { font-size: 16px; color: var(--ink); font-weight: 500; }
 
     /* downloads */
-    .dl-stack { display: grid; gap: 16px; margin-top: 32px; }
-    .dl-card { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; background: var(--cream); border: 1px solid var(--rule); padding: 28px; }
-    .dl-title { font-family: var(--ff-display); font-size: 22px; color: var(--ink); margin-bottom: 6px; }
+    .dl-stack { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 340px)); gap: 16px; margin-top: 32px; }
+    .dl-card { display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 18px; background: var(--cream); border: 1px solid var(--rule); padding: 28px; }
+    .dl-title { font-family: var(--ff-display); font-weight: 500; font-size: 22px; color: var(--ink); margin-bottom: 6px; }
     .dl-desc { font-size: 14px; color: var(--text-mid); max-width: 560px; }
-    .dl-soon { background: transparent; }
-    .dl-soon .dl-title { color: var(--text-dim); }
-    .dl-soon .dl-desc { color: var(--text-dim); }
+    .dl-soon { background: transparent; border: 1px dashed rgba(35,31,32,0.35); }
+    .dl-soon .dl-title { color: var(--ink); }
+    .dl-soon .dl-desc { color: var(--ink); }
     .dl-tag { font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; background: var(--peach); color: var(--ink); padding: 6px 14px; white-space: nowrap; }
     .dl-note { font-style: italic; font-size: 13px; color: var(--text-mid); margin-top: 20px; max-width: 620px; }
 
@@ -292,7 +292,7 @@
     .logo-stage { height: 200px; display: flex; align-items: center; justify-content: center; }
     .logo-stage img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; }
     .logo-block .logo-label { color: inherit; justify-content: center; text-align: center; margin-top: 20px;
-      font-family: 'Jost', var(--ff-body); font-weight: 700; font-size: 16px; letter-spacing: .14em; text-transform: uppercase; }
+      font-family: 'Inter', var(--ff-body); font-weight: 400; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; opacity: .8; gap: 12px; }
     .logo-block-dark .logo-bar { background: var(--cream); opacity: .5; }
     @media (max-width: 800px) { .logo-block { padding: 32px 24px; } }
     @media (min-width: 1000px) { .pal-sm .pal-role { white-space: nowrap; font-size: 11.5px; } }
@@ -308,7 +308,7 @@
     .pal-big { min-height: 240px; }
     .pal-sm { min-height: 180px; padding: 20px; }
     .pal-edge { border: 1px solid var(--rule); }
-    .pal-name { font-family: var(--ff-display); font-size: 18px; margin-bottom: 4px; }
+    .pal-name { font-family: var(--ff-display); font-weight: 500; font-size: 18px; margin-bottom: 4px; }
     .pal-hex { font-weight: 700; font-size: 15px; letter-spacing: .04em; margin-bottom: 6px; }
     .pal-spec { font-size: 12px; line-height: 1.5; opacity: .85; }
 
@@ -322,7 +322,7 @@
 
     /* color rules */
     .rules-panel { background: var(--cream); color: var(--ink); padding: 40px; margin-top: 56px; }
-    .rules-panel h3 { font-family: var(--ff-display); font-size: 22px; color: var(--ink); margin-bottom: 8px; }
+    .rules-panel h3 { font-family: var(--ff-display); font-weight: 500; font-size: 22px; color: var(--ink); margin-bottom: 8px; }
     .rules-intro { font-size: 14px; max-width: 700px; margin-bottom: 12px; }
     .rules-explain { font-size: 12px; font-style: italic; line-height: 1.45; margin-top: -4px; }
     .rules-flag { background: var(--ink); color: var(--cream); padding: 20px 24px; margin: 36px 0 0; font-size: 15px; line-height: 1.6; }
@@ -334,6 +334,24 @@
     @media (max-width: 520px) { .rule-grid { grid-template-columns: 1fr; } }
     .rule-tile { display: flex; flex-direction: column; }
     .rule-sample { height: 84px; display: flex; align-items: center; padding: 0 18px; font-family: 'Jost', var(--ff-body); font-weight: 700; font-size: 30px; border: 1px solid var(--rule); }
+    .rule-cols { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(8, auto); grid-auto-flow: column; column-gap: 32px; }
+    .rule-col { display: contents; }
+    @media (max-width: 800px) { .rule-cols { grid-template-columns: 1fr; grid-template-rows: none; grid-auto-flow: row; } }
+    .rule-col .rule-group { margin-top: 36px; }
+    .rule-row { display: flex; align-items: center; gap: 12px; margin-top: 12px; }
+    .rule-chip { width: 64px; height: 44px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-family: 'Jost', var(--ff-body); font-weight: 700; font-size: 18px; border: 1px solid var(--rule); }
+    .rule-row .rule-name { margin-top: 0; font-size: 13px; line-height: 1.3; }
+    .rule-row .rule-note { font-size: 11.5px; line-height: 1.4; }
+    .rules-foot { border-top: 1px solid var(--rule); margin-top: 44px; padding-top: 28px; }
+    .rule-other { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 32px; row-gap: 4px; margin-top: 12px; }
+    @media (max-width: 800px) { .rule-other { grid-template-columns: 1fr; } }
+    .rule-stripes { overflow: hidden; }
+    .rules-foot-k { font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--teal-dark); margin-bottom: 6px; }
+    .rules-foot ul { list-style: none; }
+    .rules-foot li { margin-bottom: 3px; }
+    .rule-divider { border-top: 1px solid var(--rule); margin: 44px 0 28px; }
+    .rule-stripes { padding: 0; gap: 0; display: flex; }
+    .rule-stripes span { height: 100%; display: block; }
     .rule-name { font-weight: 700; font-size: 14px; margin-top: 8px; }
     .rule-note { font-size: 12.5px; line-height: 1.5; }
 
@@ -342,7 +360,7 @@
     .arc-body + .type-row { margin-top: 28px; }
     @media (max-width: 700px) { .type-row { grid-template-columns: 1fr; gap: 8px; } }
     .type-k { font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--teal-dark); padding-top: 8px; }
-    .type-head { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: clamp(30px, 5vw, 52px); line-height: 1.1; text-transform: uppercase; color: var(--teal-dark); }
+    .type-head { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: clamp(30px, 5vw, 52px); line-height: 1.1; color: var(--teal-dark); }
     .type-sub { font-family: 'Jost', sans-serif; font-weight: 700; font-size: 24px; letter-spacing: .16em; text-transform: uppercase; color: var(--teal-dark); }
     .type-body { font-family: 'Inter', sans-serif; font-size: 18px; line-height: 1.6; color: var(--ink); max-width: 640px; }
     .type-meta { font-size: 13px; margin-top: 14px; line-height: 1.6; }
@@ -419,7 +437,14 @@
           <div class="dl-title">Brand Identity Files</div>
           <div class="dl-desc">Primary and secondary logos. Snail mark. Light and dark versions.<br>File types: SVG, PNG, PDF, and EPS.</div>
         </div>
-        <a class="download-btn" href="https://drive.google.com/drive/folders/10-Rzo3i3qVGygwYFQD6UqsJHt7QnHksd?usp=drive_link" target="_blank" rel="noopener noreferrer">Go to downloads &#8599;</a>
+        <a class="download-btn" href="https://drive.google.com/drive/folders/10-Rzo3i3qVGygwYFQD6UqsJHt7QnHksd?usp=drive_link" target="_blank" rel="noopener noreferrer">Downloads &#8599;</a>
+      </div>
+      <div class="dl-card dl-soon">
+        <div class="dl-text">
+          <div class="dl-title">More to come</div>
+          <div class="dl-desc">Additional brand deliverables will be added here as they're finalized.</div>
+        </div>
+        <span class="dl-tag">Coming soon</span>
       </div>
     </div>
     <p class="dl-note">Files are added as they're finalized. Questions or missing something? Reach out to Big Sis.</p>
@@ -494,21 +519,22 @@
     <div class="rules-panel">
       <h3>Color rules</h3>
       <p class="rules-intro">Following these rules keeps Screeching Halt work easy to read and consistent, so your audience gets the best experience possible.</p>
-      <p class="rules-intro rules-explain">Contrast ratio measures how clearly one color stands out from another, from 1:1 (no difference) to 21:1 (black on white). The accessibility standard is WCAG AA, short for Web Content Accessibility Guidelines, level AA. It asks for at least 4.5:1 for regular text and 3:1 for large type. Each pairing below shows its ratio.</p>
+      <p class="rules-intro rules-explain">Each pairing below is checked for contrast, which is how clearly type stands out from its background. This keeps our work in line with ADA accessibility guidelines.</p>
 
+      <div class="rule-cols">
+        <div class="rule-col"><div class="rule-group">Use for all text</div><p class="rule-sub">Safe at any size.</p><div class="rule-row"><div class="rule-chip" style="background:#F6EAD5; color:#231F20;">Aa</div><div><div class="rule-name">Black on cream</div><div class="rule-note">Body copy, headings, captions.</div></div></div><div class="rule-row"><div class="rule-chip" style="background:#231F20; color:#F6EAD5;">Aa</div><div><div class="rule-name">Cream on black</div><div class="rule-note">All type on dark sections.</div></div></div><div class="rule-row"><div class="rule-chip" style="background:#204D4B; color:#F6EAD5;">Aa</div><div><div class="rule-name">Cream on deep teal</div><div class="rule-note">All type on teal fields.</div></div></div><div class="rule-row"><div class="rule-chip" style="background:#F6EAD5; color:#204D4B;">Aa</div><div><div class="rule-name">Deep teal on cream</div><div class="rule-note">Headings and labels.</div></div></div><div class="rule-row"><div class="rule-chip" style="background:#E58A67; color:#231F20;">Aa</div><div><div class="rule-name">Black on peach</div><div class="rule-note">Callouts and tags.</div></div></div><div class="rule-row"><div class="rule-chip" style="background:#7AB6AE; color:#231F20;">Aa</div><div><div class="rule-name">Black on soft teal</div><div class="rule-note">Callouts and tags.</div></div></div></div>
+        <div class="rule-col"><div class="rule-group">Large type only</div><p class="rule-sub">Headlines, buttons and big numbers. Never body copy. Large type means 18pt and up, or bold 14pt and up.</p><div class="rule-row"><div class="rule-chip" style="background:#EF4123; color:#F6EAD5;">Aa</div><div><div class="rule-name">Cream on orange</div><div class="rule-note">Headlines and buttons only.</div></div></div><div class="rule-row"><div class="rule-chip" style="background:#F6EAD5; color:#EF4123;">Aa</div><div><div class="rule-name">Orange on cream</div><div class="rule-note">Headlines and accents only.</div></div></div><div class="rule-row"><div class="rule-chip" style="background:#231F20; color:#EF4123;">Aa</div><div><div class="rule-name">Orange on black</div><div class="rule-note">Headlines on dark only.</div></div></div><div class="rule-row"><div class="rule-chip" style="background:#204D4B; color:#7AB6AE;">Aa</div><div><div class="rule-name">Soft teal on deep teal</div><div class="rule-note">Headlines on teal only.</div></div></div><div class="rule-row"><div class="rule-chip" style="background:#204D4B; color:#E58A67;">Aa</div><div><div class="rule-name">Peach on deep teal</div><div class="rule-note">Headlines on teal only.</div></div></div><div class="rule-row"><div class="rule-chip" style="background:#36958B; color:#F6EAD5;">Aa</div><div><div class="rule-name">Cream on teal</div><div class="rule-note">Headlines on teal only.</div></div></div></div>
+        <div class="rule-col"><div class="rule-group">Do not use</div><p class="rule-sub">Too hard to read, or a combination that clashes.</p><div class="rule-row"><div class="rule-chip" style="background:#204D4B; color:#231F20;">Aa</div><div><div class="rule-name">Black on deep teal</div><div class="rule-note">Too dark to read.</div></div></div><div class="rule-row"><div class="rule-chip" style="background:#E58A67; color:#F6EAD5;">Aa</div><div><div class="rule-name">Cream on peach</div><div class="rule-note">Too soft to read.</div></div></div><div class="rule-row"><div class="rule-chip" style="background:#7AB6AE; color:#F6EAD5;">Aa</div><div><div class="rule-name">Cream on soft teal</div><div class="rule-note">Too soft to read.</div></div></div><div class="rule-row"><div class="rule-chip" style="background:#36958B; color:#EF4123;">Aa</div><div><div class="rule-name">Orange on teal</div><div class="rule-note">Colors vibrate.</div></div></div><div class="rule-row"><div class="rule-chip" style="background:#E58A67; color:#EF4123;">Aa</div><div><div class="rule-name">Orange on peach</div><div class="rule-note">Colors vibrate.</div></div></div><div class="rule-row"><div class="rule-chip" style="background:#204D4B; color:#36958B;">Aa</div><div><div class="rule-name">Teal on deep teal</div><div class="rule-note">Too close in tone.</div></div></div></div>
+      </div>
 
-      <div class="rule-group">Use for all text</div>
-      <p class="rule-sub">4.5:1 or higher. Safe at any size.</p>
-      <div class="rule-grid"><div class="rule-tile"><div class="rule-sample" style="background:#F6EAD5; color:#231F20;">Aa</div><div class="rule-name">Black on cream</div><div class="rule-note">13.7:1. Body copy, headings, captions.</div></div><div class="rule-tile"><div class="rule-sample" style="background:#231F20; color:#F6EAD5;">Aa</div><div class="rule-name">Cream on black</div><div class="rule-note">13.7:1. All type on dark sections.</div></div><div class="rule-tile"><div class="rule-sample" style="background:#204D4B; color:#F6EAD5;">Aa</div><div class="rule-name">Cream on deep teal</div><div class="rule-note">7.9:1. All type on teal fields.</div></div><div class="rule-tile"><div class="rule-sample" style="background:#F6EAD5; color:#204D4B;">Aa</div><div class="rule-name">Deep teal on cream</div><div class="rule-note">7.9:1. Headings and labels.</div></div><div class="rule-tile"><div class="rule-sample" style="background:#E58A67; color:#231F20;">Aa</div><div class="rule-name">Black on peach</div><div class="rule-note">6.3:1. Callouts and tags.</div></div><div class="rule-tile"><div class="rule-sample" style="background:#7AB6AE; color:#231F20;">Aa</div><div class="rule-name">Black on soft teal</div><div class="rule-note">7.1:1. Callouts and tags.</div></div></div>
-
-      <div class="rule-group">Large type only</div>
-      <p class="rule-sub">3:1 to 4.5:1. Headlines, buttons and big numbers. Never body copy. Large type means 24px and up, or bold 19px and up.</p>
-      <div class="rule-grid"><div class="rule-tile"><div class="rule-sample" style="background:#EF4123; color:#F6EAD5;">Aa</div><div class="rule-name">Cream on orange</div><div class="rule-note">3.2:1. Headlines and buttons only.</div></div><div class="rule-tile"><div class="rule-sample" style="background:#F6EAD5; color:#EF4123;">Aa</div><div class="rule-name">Orange on cream</div><div class="rule-note">3.2:1. Headlines and accents only.</div></div><div class="rule-tile"><div class="rule-sample" style="background:#231F20; color:#EF4123;">Aa</div><div class="rule-name">Orange on black</div><div class="rule-note">4.2:1. Headlines on dark only.</div></div><div class="rule-tile"><div class="rule-sample" style="background:#204D4B; color:#7AB6AE;">Aa</div><div class="rule-name">Soft teal on deep teal</div><div class="rule-note">4.1:1. Headlines on teal only.</div></div><div class="rule-tile"><div class="rule-sample" style="background:#204D4B; color:#E58A67;">Aa</div><div class="rule-name">Peach on deep teal</div><div class="rule-note">3.7:1. Headlines on teal only.</div></div><div class="rule-tile"><div class="rule-sample" style="background:#36958B; color:#F6EAD5;">Aa</div><div class="rule-name">Cream on teal</div><div class="rule-note">3.0:1. Headlines on teal only.</div></div></div>
-
-
-      <div class="rule-group">Do not use</div>
-      <p class="rule-sub">Below 3:1, or a combination that clashes.</p>
-      <div class="rule-grid"><div class="rule-tile"><div class="rule-sample" style="background:#EF4123; color:#231F20;">Aa</div><div class="rule-name">Black on orange</div><div class="rule-note">4.2:1. Never. Reads Halloween.</div></div><div class="rule-tile"><div class="rule-sample" style="background:#204D4B; color:#231F20;">Aa</div><div class="rule-name">Black on deep teal</div><div class="rule-note">1.7:1. Too dark to read.</div></div><div class="rule-tile"><div class="rule-sample" style="background:#E58A67; color:#F6EAD5;">Aa</div><div class="rule-name">Cream on peach</div><div class="rule-note">2.2:1. Too soft to read.</div></div><div class="rule-tile"><div class="rule-sample" style="background:#7AB6AE; color:#F6EAD5;">Aa</div><div class="rule-name">Cream on soft teal</div><div class="rule-note">1.9:1. Too soft to read.</div></div><div class="rule-tile"><div class="rule-sample" style="background:#36958B; color:#EF4123;">Aa</div><div class="rule-name">Orange on teal</div><div class="rule-note">1.1:1. Colors vibrate.</div></div><div class="rule-tile"><div class="rule-sample" style="background:#204D4B; color:#36958B;">Aa</div><div class="rule-name">Teal on deep teal</div><div class="rule-note">2.6:1. Too close in tone.</div></div></div>
+      <div class="rules-foot">
+        <div class="rule-group" style="margin-top:0;">Other rules</div>
+        <div class="rule-other">
+          <div class="rule-row"><div class="rule-chip" style="background:#EF4123; color:#231F20;">Aa</div><div><div class="rule-name">Never black on orange</div><div class="rule-note">It reads Halloween.</div></div></div>
+          <div class="rule-row"><div class="rule-chip" style="background:#231F20; color:#EF4123;">Aa</div><div><div class="rule-name">Orange on black, sparingly</div><div class="rule-note">Fine in small doses. Try to avoid it.</div></div></div>
+          <div class="rule-row"><div class="rule-chip rule-stripes"><span style="flex:6; background:#F6EAD5;"></span><span style="flex:2; background:#EF4123;"></span><span style="flex:2; background:#36958B;"></span></div><div><div class="rule-name">Let cream lead</div><div class="rule-note">Not only orange and black. Orange and teal accent.</div></div></div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -519,27 +545,27 @@
   <div class="arc-w">
     <div class="arc-lbl">Type</div>
     <h2 class="arc-h1" style="font-size: clamp(28px, 4.5vw, 40px);">Recommended typefaces</h2>
-    <p class="arc-body">Desktop and print use the licensed families. Web uses the free alternatives.</p>
+    <p class="arc-body">Three free Google Fonts that work on the web and in print.</p>
 
     <div class="type-row">
       <div class="type-k">Headlines</div>
       <div>
-        <div class="type-head">Screeching Halt</div>
-        <div class="type-meta"><b>Acumin Variable Concept ExtraCondensed Semibold</b><br>Web alternative: Oswald Medium</div>
+        <div class="type-head">Big ideas, clearly said</div>
+        <div class="type-meta"><b>Oswald Medium</b></div>
       </div>
     </div>
     <div class="type-row">
       <div class="type-k">Subheads</div>
       <div>
-        <div class="type-sub">Brand Hub</div>
-        <div class="type-meta"><b>Futura Bold</b><br>Web alternative: Jost Bold</div>
+        <div class="type-sub">Catches your eye</div>
+        <div class="type-meta"><b>Jost Bold</b></div>
       </div>
     </div>
     <div class="type-row">
       <div class="type-k">Body copy</div>
       <div>
-        <p class="type-body">Production-ready files for every use case. Use <em>italic</em> for emphasis and <b>bold</b> for key terms.</p>
-        <div class="type-meta"><b>Inter 18pt</b><br>Regular, italic, and bold for inline paragraph copy</div>
+        <p class="type-body">Use <em>italic</em> for emphasis and <b>bold</b> for key terms.</p>
+        <div class="type-meta"><b>Inter</b><br>Regular, italic, and bold for inline paragraph copy.</div>
       </div>
     </div>
   </div>
