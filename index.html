@@ -308,6 +308,9 @@
     @media (max-width: 520px) { .pal-grid-3, .pal-grid-4 { grid-template-columns: 1fr; } }
     .pal-swatch { padding: 24px; display: flex; flex-direction: column; justify-content: flex-end; }
     .pal-big { min-height: 240px; }
+    .pal-swatch { position: relative; }
+    .pal-tag { position: absolute; top: 16px; left: 24px; font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+
     .pal-sm { min-height: 180px; padding: 20px; }
     .pal-edge { border: 1px solid var(--rule); }
     .pal-name { font-family: var(--ff-display); font-weight: 500; font-size: 18px; margin-bottom: 4px; }
@@ -345,9 +348,12 @@
     .rule-row .rule-name { margin-top: 0; font-size: 13px; line-height: 1.3; }
     .rule-row .rule-note { font-size: 11.5px; line-height: 1.4; }
     .rules-foot { border-top: 1px solid var(--rule); margin-top: 44px; padding-top: 28px; }
-    .rule-other { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 32px; row-gap: 4px; margin-top: 12px; }
+    .rule-other { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 32px; row-gap: 4px; margin-top: 12px; align-items: start; }
     @media (max-width: 800px) { .rule-other { grid-template-columns: 1fr; } }
     .rule-stripes { overflow: hidden; }
+    .rule-other .rule-row { align-items: flex-start; }
+    .rule-pair { display: flex; gap: 10px; flex-shrink: 0; }
+    .rule-sq { width: 44px; height: 44px; display: flex; box-shadow: 0 0 0 1px rgba(35,31,32,0.22); overflow: hidden; }
     .rules-foot-k { font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--teal-dark); margin-bottom: 6px; }
     .rules-foot ul { list-style: none; }
     .rules-foot li { margin-bottom: 3px; }
@@ -505,9 +511,9 @@
 
     <div class="pal-title">Primary</div>
     <div class="pal-grid pal-grid-3">
-      <div class="pal-swatch pal-big" style="background:#EF4123; color:#F6EAD5;"><div class="pal-hex">#EF4123</div><div class="pal-spec">C0 M90 Y100 K0<br>RGB 239, 65, 35</div><div class="pal-role">The lead. Logo backgrounds and key moments.</div></div>
-      <div class="pal-swatch pal-big pal-edge" style="background:#F6EAD5; color:#231F20;"><div class="pal-hex">#F6EAD5</div><div class="pal-spec">C3 M6 Y16 K0<br>RGB 246, 234, 213</div><div class="pal-role">The base. Backgrounds, and type on dark.</div></div>
-      <div class="pal-swatch pal-big pal-edge-dark" style="background:#231F20; color:#F6EAD5;"><div class="pal-hex">#231F20</div><div class="pal-spec">C0 M0 Y0 K100<br>RGB 35, 31, 32</div><div class="pal-role">The anchor. Text and dark sections.</div></div>
+      <div class="pal-swatch pal-big pal-edge-dark" style="background:#231F20; color:#F6EAD5;"><span class="pal-tag">Lead</span><div class="pal-hex">#231F20</div><div class="pal-spec">C0 M0 Y0 K100<br>RGB 35, 31, 32</div><div class="pal-role">The anchor. Text and dark sections.</div></div>
+      <div class="pal-swatch pal-big pal-edge" style="background:#F6EAD5; color:#231F20;"><span class="pal-tag">Lead</span><div class="pal-hex">#F6EAD5</div><div class="pal-spec">C3 M6 Y16 K0<br>RGB 246, 234, 213</div><div class="pal-role">The base. Backgrounds, and type on dark.</div></div>
+      <div class="pal-swatch pal-big" style="background:#EF4123; color:#F6EAD5;"><span class="pal-tag">Accent</span><div class="pal-hex">#EF4123</div><div class="pal-spec">C0 M90 Y100 K0<br>RGB 239, 65, 35</div><div class="pal-role">The primary accent. Logo backgrounds and key moments.</div></div>
     </div>
 
     <div class="pal-title" style="margin-top: 48px;">Secondary</div>
@@ -534,7 +540,9 @@
         <div class="rule-other">
           <div class="rule-row"><div class="rule-chip" style="background:#EF4123; color:#231F20;">Aa</div><div><div class="rule-name">Never black on orange</div><div class="rule-note">It reads Halloween.</div></div></div>
           <div class="rule-row"><div class="rule-chip" style="background:#231F20; color:#EF4123;">Aa</div><div><div class="rule-name">Orange on black, sparingly</div><div class="rule-note">Fine in small doses. Try to avoid it.</div></div></div>
-          <div class="rule-row"><div class="rule-chip rule-stripes"><span style="flex:6; background:#F6EAD5;"></span><span style="flex:2; background:#EF4123;"></span><span style="flex:2; background:#36958B;"></span></div><div><div class="rule-name">Let cream lead</div><div class="rule-note">Not only orange and black. Orange and teal accent.</div></div></div>
+          <div>
+            <div class="rule-row"><div class="rule-pair"><div class="rule-sq rule-stripes"><span style="flex:8; background:#231F20;"></span><span style="flex:2; background:#EF4123;"></span></div><div class="rule-sq rule-stripes"><span style="flex:8; background:#F6EAD5;"></span><span style="flex:2; background:#EF4123;"></span></div></div><div><div class="rule-name">Black and cream lead</div><div class="rule-note">Orange used as primary accent.</div></div></div>
+          </div>
         </div>
       </div>
     </div>
