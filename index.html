@@ -374,6 +374,13 @@
     .type-meta { font-size: 13px; margin-top: 14px; line-height: 1.6; }
     .type-meta b { font-weight: 700; }
 
+    /* taglines */
+    .tag-list { margin-top: 32px; }
+    .tag-row { display: grid; grid-template-columns: 72px 1fr; align-items: center; gap: 16px; padding: 22px 0; border-top: 1px solid var(--rule); }
+    .tag-row:last-child { border-bottom: 1px solid var(--rule); }
+    .tag-num { font-size: 10px; font-weight: 700; letter-spacing: .16em; color: var(--teal-dark); }
+    .tag-text { font-family: var(--ff-display); font-weight: 500; font-size: clamp(26px, 4vw, 40px); line-height: 1.15; color: var(--ink); }
+
     /* snail as background element */
     .snail-bg { position: relative; overflow: hidden; }
     .snail-bg::before {
@@ -414,6 +421,7 @@
     <a href="#logos">Logo System</a>
     <a href="#colors">Color</a>
     <a href="#type">Type</a>
+    <a href="#taglines">Taglines</a>
     <a href="#archive">Previous</a>
   </div>
 </nav>
@@ -577,6 +585,24 @@
         <p class="type-body">Use <em>italic</em> for emphasis and <b>bold</b> for key terms.</p>
         <div class="type-meta"><b>Inter</b><br>Regular, italic, and bold for inline paragraph copy.</div>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- TAGLINES -->
+<div class="arc-s" id="taglines" style="background: var(--bg); border-top: 1px solid var(--rule); scroll-margin-top: 60px;">
+  <div class="arc-w">
+    <div class="arc-lbl">Taglines</div>
+    <h2 class="arc-h1" style="font-size: clamp(28px, 4.5vw, 40px);">Tagline options</h2>
+    <p class="arc-body">This round of tagline options pushes toward more edge, while keeping the emotion but losing the softness. The intent of the new line is to work with any type of project Screeching Halt produces down the road.</p>
+    <div class="tag-list">
+    <div class="tag-row"><div class="tag-num">01</div><div class="tag-text">Stop and stare</div></div>
+    <div class="tag-row"><div class="tag-num">02</div><div class="tag-text">Stories that stop you</div></div>
+    <div class="tag-row"><div class="tag-num">03</div><div class="tag-text">Take a good look</div></div>
+    <div class="tag-row"><div class="tag-num">04</div><div class="tag-text">It&rsquo;s gonna leave a mark</div></div>
+    <div class="tag-row"><div class="tag-num">05</div><div class="tag-text">Brace for impact</div></div>
+    <div class="tag-row"><div class="tag-num">06</div><div class="tag-text">Slam on the feels</div></div>
+    <div class="tag-row"><div class="tag-num">07</div><div class="tag-text">Stories that hit</div></div>
     </div>
   </div>
 </div>
